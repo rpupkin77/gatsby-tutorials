@@ -1,0 +1,2993 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q51Z6FZWE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8Q51Z6FZWE');
+</script>
+
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+                <title>big red dog - Reddit post and comment search - SocialGrep</title>
+    
+                <meta property="og:image" content="/static/default_thumbnail.png" />
+        <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+
+    <!-- Meta description -->
+                <meta name="Description" content="Search Reddit posts and comments - see average sentiment, top terms, activity per day and more"/>
+    
+    <!-- Canonical link -->
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg" href="/static/sg.svg">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="/static/front/assets/vendor/icon-set/style.css">
+    <link rel="stylesheet" href="/static/front/assets/vendor/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="/static/front/assets/vendor/chart.js/dist/Chart.min.css">
+    <link rel="stylesheet" href="/static/front/assets/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="/static/socialgrep.css">
+    
+
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="/static/front/assets/css/theme.min.css">
+    <script src="/static/js/marked.js"></script>
+      </head>
+
+  <body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl   footer-offset body-with-background">
+
+    <!-- JS Global Compulsory  -->
+    <script src="/static/front/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/static/front/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+    <script src="/static/front/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script src="/static/front/assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside.min.js"></script>
+    <script src="/static/front/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
+    <script src="/static/front/assets/vendor/hs-form-search/dist/hs-form-search.min.js"></script>
+    <script src="/static/front/assets/vendor/select2/dist/js/select2.full.min.js"></script>
+    <script src="/static/front/assets/vendor/chart.js/dist/Chart.min.js"></script>
+    <script src="/static/front/assets/vendor/chart.js.extensions/chartjs-extensions.js"></script>
+    <script src="/static/front/assets/vendor/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="/static/front/assets/vendor/daterangepicker/moment.min.js"></script>
+    <script src="/static/front/assets/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="/static/front/assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="/static/front/assets/vendor/datatables.net.extensions/select/select.min.js"></script>
+    <script src="/static/front/assets/vendor/clipboard/dist/clipboard.min.js"></script>
+
+    <!-- JS Front -->
+    <script src="/static/front/assets/js/theme.min.js"></script>
+    
+    <script src="/static/front/assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
+
+    <!-- Tagify -->
+    <link type="text/css" rel="stylesheet" href="/static/tagify/tagify.css"  media="screen,projection"/>
+    <script type="text/javascript" src="/static/tagify/tagify.min.js"></script>
+    
+    <!-- Rich results -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+
+    <!-- Search Form -->
+    <div id="searchDropdown" class="hs-unfold-content dropdown-unfold search-fullwidth d-md-none">
+  <form class="input-group input-group-merge input-group-borderless" id="search_topbar_1_searchbar" action="/search" method="get">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <i class="tio-search"></i>
+      </div>
+    </div>
+
+    <input class="form-control rounded-0 topSearchQuery searchQuery" type="search" name="query" value="big red dog" placeholder="Search term (or /r/subreddit)" aria-label="Search term (or /r/subreddit)">
+
+    <div class="input-group-append">
+      <div class="input-group-text">
+        <div class="hs-unfold">
+          <a class="js-hs-unfold-invoker" href="javascript:;" id="search_topbar_1_searchButton"
+             data-hs-unfold-options='{
+               "target": "#searchDropdown",
+               "type": "css-animation",
+               "animationIn": "fadeIn",
+               "hasOverlay": "rgba(46, 52, 81, 0.1)",
+               "closeBreakpoint": "md"
+             }'>
+            <i class="tio-search tio-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+
+var input = document.querySelector('#search_topbar_1_searchbar .topSearchQuery');
+
+var search_topbar_1_tagify = new Tagify(input, {transformTag: transformTag,
+    delimiters : ",| |\n",
+    templates : {
+        tag : function(tagData){
+            try{
+                return `<tag title='${tagData.value}' contenteditable='false' spellcheck="false" class='tagify__tag badge btn btn-xs btn-pill my-auto ml-1 ${tagData.class ? tagData.class : ""}' ${this.getAttributes(tagData)}>
+                    <x title='remove tag' class='tagify__tag__removeBtn'></x>
+                        <div>
+                            <span class='tagify__tag-text'>${tagData.value}</span>
+                        </div>
+                    </tag>`
+            }
+            catch(err){}
+        },
+    }
+});
+function search_topbar_1_submitForm() {
+    search_topbar_1_formElm[0].value = JSON.parse(search_topbar_1_formElm[0].value).map(x => x["value"]);
+    search_topbar_1_formElm.submit();
+}
+
+$("#search_topbar_1_searchButton").click(search_topbar_1_submitForm);
+function transformTag(tagData) {
+  if (tagData.value.startsWith("/r/")) {
+    tagData.class = "btn-soft-success";
+  } else if (tagData.value.startsWith("-/r/")) {
+    tagData.class = "btn-soft-danger";
+  } else if (tagData.value.startsWith("site:")) {
+    tagData.class = "btn-soft-secondary";
+  } else if (tagData.value.startsWith("score:")) {
+    tagData.class = "btn-soft-info";
+  } else if (tagData.value.startsWith("-site:")) {
+    tagData.class = "btn-soft-warning";
+  } else if (tagData.value.startsWith("before:")) {
+    tagData.class = "btn-info";
+  } else if (tagData.value.startsWith("after:")) {
+    tagData.class = "btn-info";
+  } else if (tagData.value.startsWith("-")) {
+    tagData.class = "btn-primary";
+  } else if (tagData.value === "socialgrep") {
+    tagData.class = "btn-soft-primary meta-egg";
+  } else {
+    tagData.class = "btn-soft-primary";
+  }
+}
+var search_topbar_1_formElm = document.querySelector('#search_topbar_1_searchbar');
+search_topbar_1_tagify.on('keydown', search_topbar_1_onTagifyKeyDown)
+
+function search_topbar_1_onTagifyKeyDown(e){
+  if( e.detail.originalEvent.code == 'Enter' &&   // "enter" key pressed
+      !search_topbar_1_tagify.state.inputText &&  // assuming user is not in the middle oy adding a tag
+      !search_topbar_1_tagify.state.editing       // user not editing a tag
+    ){
+    setTimeout(search_topbar_1_submitForm)
+  }
+}
+</script>
+
+    <!-- End Search Form -->
+
+    <!-- ========== HEADER ========== -->
+    
+      <header id="header" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
+        <div class="navbar-nav-wrap">
+          <div class="navbar-brand-wrapper">
+            <!-- Logo -->
+            <a class="navbar-brand" href="https://www.socialgrep.com" aria-label="Logo">
+              <img class="navbar-brand-logo" src="/static/socialgrep.svg" alt="Logo">
+              <img class="navbar-brand-logo-mini" src="/static/sg.svg" alt="Logo">
+            </a>
+            <!-- End Logo -->
+          </div>
+
+          <div class="navbar-nav-wrap-content-left">
+            <!-- Navbar Vertical Toggle -->
+            <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
+              <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip" data-placement="right" title="Collapse"></i>
+              <i class="tio-menu-hamburger navbar-vertical-aside-toggle-full-align" data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>' data-toggle="tooltip" data-placement="right" title="Expand"></i>
+            </button>
+            <!-- End Navbar Vertical Toggle -->
+
+            <!-- Search Form -->
+            <div class="d-none d-md-block">
+              <form id="search_topbar_2_searchbar" action="/search" method="get">
+    <div class="input-group rounded">
+        <input id="search_topbar_2_searchQuery" class="searchQuery rounded" name="query" value="big red dog" aria-describedby="search_topbar_2_searchButton"></input>
+        <span class="input-group-text border-0 pressSearch" id="search_topbar_2_searchButton">
+            <i class="tio-search"></i>
+        </span>
+    </div>
+</form>
+<script>
+var input = document.querySelector('#search_topbar_2_searchQuery');
+
+var search_topbar_2_tagify = new Tagify(input, {transformTag: transformTag,
+    delimiters : ",| |\n",
+    templates : {
+        tag : function(tagData){
+            try{
+                return `<tag title='${tagData.value}' contenteditable='false' spellcheck="false" class='tagify__tag badge btn btn-xs btn-pill my-1 ml-1 ${tagData.class ? tagData.class : ""}' ${this.getAttributes(tagData)}>
+                    <x title='remove tag' class='tagify__tag__removeBtn'></x>
+                        <div>
+                            <span class='tagify__tag-text'>${tagData.value}</span>
+                        </div>
+                    </tag>`
+            }
+            catch(err){}
+        },
+    }
+});
+function search_topbar_2_submitForm() {
+    search_topbar_2_formElm[0].value = JSON.parse(search_topbar_2_formElm[0].value).map(x => x["value"]);
+    search_topbar_2_formElm.submit();
+}
+
+$("#search_topbar_2_searchButton").click(search_topbar_2_submitForm);
+function transformTag(tagData) {
+  if (tagData.value.startsWith("/r/")) {
+    tagData.class = "btn-soft-success";
+  } else if (tagData.value.startsWith("-/r/")) {
+    tagData.class = "btn-soft-danger";
+  } else if (tagData.value.startsWith("site:")) {
+    tagData.class = "btn-soft-secondary";
+  } else if (tagData.value.startsWith("score:")) {
+    tagData.class = "btn-soft-info";
+  } else if (tagData.value.startsWith("-site:")) {
+    tagData.class = "btn-soft-warning";
+  } else if (tagData.value.startsWith("before:")) {
+    tagData.class = "btn-info";
+  } else if (tagData.value.startsWith("after:")) {
+    tagData.class = "btn-info";
+  } else if (tagData.value.startsWith("-")) {
+    tagData.class = "btn-primary";
+  } else if (tagData.value === "socialgrep") {
+    tagData.class = "btn-soft-primary meta-egg";
+  } else {
+    tagData.class = "btn-soft-primary";
+  }
+}
+var search_topbar_2_formElm = document.querySelector('#search_topbar_2_searchbar');
+search_topbar_2_tagify.on('keydown', search_topbar_2_onTagifyKeyDown)
+
+function search_topbar_2_onTagifyKeyDown(e){
+  if( e.detail.originalEvent.code == 'Enter' &&   // "enter" key pressed
+      !search_topbar_2_tagify.state.inputText &&  // assuming user is not in the middle oy adding a tag
+      !search_topbar_2_tagify.state.editing       // user not editing a tag
+    ){
+    setTimeout(search_topbar_2_submitForm)
+  }
+}
+</script>
+
+            </div>
+            <!-- End Search Form -->
+          </div>
+
+          <!-- Secondary Content -->
+          <div class="navbar-nav-wrap-content-right">
+            <!-- Navbar -->
+            <ul class="navbar-nav align-items-center flex-row">
+              <li class="nav-item d-md-none">
+                <!-- Search Trigger -->
+                <div class="hs-unfold">
+                  <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle" href="javascript:;"
+                     data-hs-unfold-options='{
+                       "target": "#searchDropdown",
+                       "type": "css-animation",
+                       "animationIn": "fadeIn",
+                       "hasOverlay": "rgba(46, 52, 81, 0.1)",
+                       "closeBreakpoint": "md"
+                     }'>
+                    <i class="tio-search"></i>
+                  </a>
+                </div>
+                <!-- End Search Trigger -->
+              </li>
+
+
+                              <!-- End Account -->
+              </li>
+            </ul>
+            <!-- End Navbar -->
+          </div>
+          <!-- End Secondary Content -->
+        </div>
+      </header>
+    
+
+    
+
+    
+    <!-- ========== END HEADER ========== -->
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <!-- Navbar Vertical -->
+    
+      <aside class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
+        <div class="navbar-vertical-container">
+          <div class="navbar-vertical-footer-offset">
+            <div class="navbar-brand-wrapper justify-content-between">
+              <!-- Logo -->
+              
+              
+                <a class="navbar-brand" href="https://www.socialgrep.com" aria-label="SocialGrep">
+                  <img class="navbar-brand-logo" src="/static/socialgrep.svg" alt="Logo">
+                  <img class="navbar-brand-logo-mini" src="/static/sg.svg" alt="Logo">
+                </a>
+              
+              <!-- End Logo -->
+
+              <!-- Navbar Vertical Toggle -->
+              <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
+                <i class="tio-clear tio-lg"></i>
+              </button>
+              <!-- End Navbar Vertical Toggle -->
+            </div>
+
+            <!-- Content -->
+            <div class="navbar-vertical-content">
+              <ul class="navbar-nav navbar-nav-lg nav-tabs" style="overflow: hidden">
+                <li class="nav-item">
+                  <small class="nav-subtitle" title="Site statistics">Site statistics</small>
+                  <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                </li>
+
+                                  <a class="js-nav-tooltip-link nav-link " href="https://www.socialgrep.com" title="Reddit" data-placement="left">
+                    <i class="tio-reddit nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Reddit</span>
+                  </a>
+                
+                
+                <a class="js-nav-tooltip-link nav-link active" href="https://www.socialgrep.com/search" title="Search">
+                  <i class="tio-search nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Search</span>
+                </a>
+
+                <li class="navbar-vertical-aside-has-menu ">
+                  <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;" title="Reports">
+                                        <i class="tio-dashboard nav-icon"></i>
+                                        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Reports</span>
+                  </a>
+
+                  <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                    <li class="nav-item">
+                      <a class="nav-link " href="https://www.socialgrep.com/reports/cryptos">
+                        <span class="tio-circle nav-indicator-icon"></span>
+                        <span class="text-truncate">Cryptocurrency trends</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link " href="https://rapidapi.com/lexyr-inc-lexyr-inc-default/api/socialgrep" title="API" target="_blank">
+                    <i class="tio-code nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">API</span>
+                  </a>
+                </li>
+
+                <a class="js-nav-tooltip-link nav-link " href="https://www.socialgrep.com/datasets" title="Datasets">
+                  <i class="tio-table nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Datasets</span>
+                </a>
+
+                <li class="navbar-vertical-aside-has-menu ">
+                  <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;" title="Help">
+                                        <i class="tio-help-outlined nav-icon"></i>
+                                        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Help</span>
+                  </a>
+
+                  <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link " href="https://www.socialgrep.com/abuse">
+                        <span class="tio-circle nav-indicator-icon"></span>
+                        <span class="text-truncate">Request a Takedown</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+
+                                <li class="nav-item">
+                  <small class="nav-subtitle" title="My profile">My profile</small>
+                  <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                </li>
+
+                <!-- Pages -->
+                <li class="nav-item ">
+                  <a class="js-nav-tooltip-link nav-link " href="/login" title="Sign in" data-placement="left">
+                    <i class="tio-account-circle nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Sign in</span>
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="js-nav-tooltip-link nav-link " href="/register" title="Register" data-placement="left">
+                    <i class="tio-user-add nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Register</span>
+                  </a>
+                </li>
+                                <a class="js-nav-tooltip-link nav-link " href="https://www.socialgrep.com/premium" title="Premium Features">
+                  <i class="tio-diamond nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Premium Features</span>
+                </a>
+                <li class="nav-item">
+                  <small class="nav-subtitle" title="My profile">Contact us</small>
+                  <ul class="nav-link ">
+                    <div class="row w-100">
+                      <a href="https://reddit.com/r/socialgrep" class="col-4 nav-icon list-inline-item mx-auto">
+                        <i class="tio-reddit"></i>
+                      </a>
+                      <a href="https://twitter.com/socialgrep" class="col-4 nav-icon list-inline-item mx-auto">
+                        <i class="tio-twitter"></i>
+                      </a>
+                      <a href="https://www.socialgrep.com/contact" class="col-4 nav-icon list-inline-item mx-auto">
+                        <i class="tio-email"></i>
+                      </a>
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- End Content -->
+          </div>
+        </div>
+      </aside>
+    
+
+    
+    <!-- End Navbar Vertical -->
+    <main id="content" role="main" class="main pointer-event">
+      <div class="content container-fluid">
+      <div class="row gx-2 gx-lg-3">
+    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+    <!-- Card -->
+    <!-- Card -->
+<a class="card card-hover-shadow h-100" href="#">
+  <div class="card-body">
+    <h6 class="card-subtitle">Activity per day</h6>
+
+    <div class="row align-items-center gx-2 mb-1">
+              <div class="col-6">
+                          <span class="card-title h3" style="color: #000000">0 posts,</span>
+              <span class="card-title h3" style="color: #ed1e79">0 comments</span>
+                  </div>
+
+                  <div class="col-6">
+        <!-- Chart -->
+        <div class="chartjs-custom" style="height: 3rem;">
+          <canvas class="js-chart"
+                  data-hs-chartjs-options='{
+                    "type": "line",
+                    "data": {
+                       "labels": ["2021-09-12","2021-09-13","2021-09-14","2021-09-15","2021-09-16","2021-09-17","2021-09-18","2021-09-19","2021-09-20","2021-09-21","2021-09-22","2021-09-23","2021-09-24","2021-09-25","2021-09-26","2021-09-27","2021-09-28","2021-09-29","2021-09-30","2021-10-01","2021-10-02","2021-10-03","2021-10-04","2021-10-05","2021-10-06","2021-10-07","2021-10-08","2021-10-09","2021-10-10","2021-10-11"],
+                       "datasets": [
+                                               {
+                          "yAxisID": "0",
+                          "data": [0,2,0,0,1,0,1,0,0,0,1,7,6,1,1,1,1,0,2,0,2,1,1,0,1,1,0,1,0,0],
+                          "backgroundColor": ["rgba(237, 30, 121, 0)", "rgba(255, 255, 255, 0)"],
+                          "borderColor": "#000000",
+                          "borderWidth": 2,
+                          "pointRadius": 0,
+                          "pointHoverRadius": 0
+                        }
+                                                ,
+                                                                      {
+                          "yAxisID": "1",
+                          "data": [26,31,31,29,18,36,29,32,26,29,28,27,25,27,17,40,26,25,31,32,21,29,35,16,26,20,27,43,0,0],
+                          "backgroundColor": ["rgba(237, 30, 121, 0)", "rgba(255, 255, 255, 0)"],
+                          "borderColor": "#ed1e79",
+                          "borderWidth": 2,
+                          "pointRadius": 0,
+                          "pointHoverRadius": 0
+                        }
+                                                                    ]
+                    },
+                    "options": {
+                       "scales": {
+                         "yAxes": [
+                                               {
+                          "id": "0",
+                          "display": false,
+                          "scale": "linear"
+                        },                                               {
+                          "id": "1",
+                          "display": false,
+                          "scale": "linear"
+                        }                                                ],
+                         "xAxes": [{
+                           "display": false
+                         }]
+                       },
+                      "hover": {
+                        "mode": "index",
+                        "intersect": false
+                      },
+                      "tooltips": {
+                        "mode": "index",
+                        "hasIndicator": true,
+                        "yearStamp": false,
+                        "intersect": false
+                      }
+                    }
+                  }'>
+          </canvas>
+        </div>
+        <!-- End Chart -->
+      </div>
+                </div>
+    <!-- End Row -->
+  </div>
+</a>
+
+    <!-- End Card -->
+  </div>
+
+    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+      <!-- Card -->
+      <!-- Card -->
+<a class="card card-hover-shadow h-100" href="#">
+  <div class="card-body">
+    <h6 class="card-subtitle">Spread per day</h6>
+
+    <div class="row align-items-center gx-2 mb-1">
+              <div class="col-6">
+                          <span class="card-title h3" style="color: #000000">0 subreddits,</span>
+              <span class="card-title h3" style="color: #ed1e79">0 subreddits</span>
+                  </div>
+
+                  <div class="col-6">
+        <!-- Chart -->
+        <div class="chartjs-custom" style="height: 3rem;">
+          <canvas class="js-chart"
+                  data-hs-chartjs-options='{
+                    "type": "line",
+                    "data": {
+                       "labels": ["2021-09-12","2021-09-13","2021-09-14","2021-09-15","2021-09-16","2021-09-17","2021-09-18","2021-09-19","2021-09-20","2021-09-21","2021-09-22","2021-09-23","2021-09-24","2021-09-25","2021-09-26","2021-09-27","2021-09-28","2021-09-29","2021-09-30","2021-10-01","2021-10-02","2021-10-03","2021-10-04","2021-10-05","2021-10-06","2021-10-07","2021-10-08","2021-10-09","2021-10-10","2021-10-11"],
+                       "datasets": [
+                                               {
+                          "yAxisID": "0",
+                          "data": [0,2,0,0,1,0,1,0,0,0,1,6,6,1,1,1,1,0,2,0,2,1,1,0,1,1,0,1,0,0],
+                          "backgroundColor": ["rgba(237, 30, 121, 0)", "rgba(255, 255, 255, 0)"],
+                          "borderColor": "#000000",
+                          "borderWidth": 2,
+                          "pointRadius": 0,
+                          "pointHoverRadius": 0
+                        }
+                                                ,
+                                                                      {
+                          "yAxisID": "1",
+                          "data": [24,26,30,25,15,25,23,25,24,23,27,24,24,23,17,26,19,22,29,29,18,22,23,16,24,18,26,33,0,0],
+                          "backgroundColor": ["rgba(237, 30, 121, 0)", "rgba(255, 255, 255, 0)"],
+                          "borderColor": "#ed1e79",
+                          "borderWidth": 2,
+                          "pointRadius": 0,
+                          "pointHoverRadius": 0
+                        }
+                                                                    ]
+                    },
+                    "options": {
+                       "scales": {
+                         "yAxes": [
+                                               {
+                          "id": "0",
+                          "display": false,
+                          "scale": "linear"
+                        },                                               {
+                          "id": "1",
+                          "display": false,
+                          "scale": "linear"
+                        }                                                ],
+                         "xAxes": [{
+                           "display": false
+                         }]
+                       },
+                      "hover": {
+                        "mode": "index",
+                        "intersect": false
+                      },
+                      "tooltips": {
+                        "mode": "index",
+                        "hasIndicator": true,
+                        "yearStamp": false,
+                        "intersect": false
+                      }
+                    }
+                  }'>
+          </canvas>
+        </div>
+        <!-- End Chart -->
+      </div>
+                </div>
+    <!-- End Row -->
+  </div>
+</a>
+
+      <!-- End Card -->
+    </div>
+
+  <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+    <!-- Card -->
+    <!-- Card -->
+<a class="card card-hover-shadow h-100" href="#">
+  <div class="card-body">
+    <h6 class="card-subtitle">Avg. rating</h6>
+
+    <div class="row align-items-center gx-2 mb-1">
+              <div class="col-6">
+                          <span class="card-title h3" style="color: #000000">0.00 upvotes,</span>
+              <span class="card-title h3" style="color: #ed1e79">0.00 upvotes</span>
+                  </div>
+
+                  <div class="col-6">
+        <!-- Chart -->
+        <div class="chartjs-custom" style="height: 3rem;">
+          <canvas class="js-chart"
+                  data-hs-chartjs-options='{
+                    "type": "line",
+                    "data": {
+                       "labels": ["2021-09-12","2021-09-13","2021-09-14","2021-09-15","2021-09-16","2021-09-17","2021-09-18","2021-09-19","2021-09-20","2021-09-21","2021-09-22","2021-09-23","2021-09-24","2021-09-25","2021-09-26","2021-09-27","2021-09-28","2021-09-29","2021-09-30","2021-10-01","2021-10-02","2021-10-03","2021-10-04","2021-10-05","2021-10-06","2021-10-07","2021-10-08","2021-10-09","2021-10-10","2021-10-11"],
+                       "datasets": [
+                                               {
+                          "yAxisID": "0",
+                          "data": [null,1,null,null,1,null,1,null,null,null,59,39.86,4,13,1,1,1,null,2.5,null,2,1,51,null,1,92,null,1,null,null],
+                          "backgroundColor": ["rgba(237, 30, 121, 0)", "rgba(255, 255, 255, 0)"],
+                          "borderColor": "#000000",
+                          "borderWidth": 2,
+                          "pointRadius": 0,
+                          "pointHoverRadius": 0
+                        }
+                                                ,
+                                                                      {
+                          "yAxisID": "1",
+                          "data": [180.15,9.55,3.55,18.41,13.44,6.61,9.79,13.44,14.58,4.76,18.04,7.37,4.64,26.48,3.29,7.03,19.31,3.04,8.81,15.03,3.9,3,7.69,13.62,8.15,21.7,2.59,4.7,null,null],
+                          "backgroundColor": ["rgba(237, 30, 121, 0)", "rgba(255, 255, 255, 0)"],
+                          "borderColor": "#ed1e79",
+                          "borderWidth": 2,
+                          "pointRadius": 0,
+                          "pointHoverRadius": 0
+                        }
+                                                                    ]
+                    },
+                    "options": {
+                       "scales": {
+                         "yAxes": [
+                                               {
+                          "id": "0",
+                          "display": false,
+                          "scale": "linear"
+                        },                                               {
+                          "id": "1",
+                          "display": false,
+                          "scale": "linear"
+                        }                                                ],
+                         "xAxes": [{
+                           "display": false
+                         }]
+                       },
+                      "hover": {
+                        "mode": "index",
+                        "intersect": false
+                      },
+                      "tooltips": {
+                        "mode": "index",
+                        "hasIndicator": true,
+                        "yearStamp": false,
+                        "intersect": false
+                      }
+                    }
+                  }'>
+          </canvas>
+        </div>
+        <!-- End Chart -->
+      </div>
+                </div>
+    <!-- End Row -->
+  </div>
+</a>
+
+    <!-- End Card -->
+  </div>
+
+  <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+    <!-- Card -->
+    <!-- Card -->
+<a class="card card-hover-shadow h-100" href="#">
+  <div class="card-body">
+    <h6 class="card-subtitle">Comment sentiment</h6>
+
+    <div class="row align-items-center gx-2 mb-1">
+              <div class="col-6">
+                  <span class="card-title h2">
+      <span class='text-info'>0.00</span>    </span>
+        </div>
+
+            <div class="col-6">
+        <!-- Chart -->
+        <div class="chartjs-custom" style="height: 3rem;">
+          <canvas class="js-chart"
+                  data-hs-chartjs-options='{
+                    "type": "line",
+                    "data": {
+                       "labels": ["2021-09-12","2021-09-13","2021-09-14","2021-09-15","2021-09-16","2021-09-17","2021-09-18","2021-09-19","2021-09-20","2021-09-21","2021-09-22","2021-09-23","2021-09-24","2021-09-25","2021-09-26","2021-09-27","2021-09-28","2021-09-29","2021-09-30","2021-10-01","2021-10-02","2021-10-03","2021-10-04","2021-10-05","2021-10-06","2021-10-07","2021-10-08","2021-10-09","2021-10-10","2021-10-11"],
+                       "datasets": [{
+                        "data": [0.2015,0.2812,0.2766,-0.0586,0.2663,0.1718,0.2101,0.0794,0.533,0.1936,0.2635,0.3306,0.2717,-0.064,0.4281,0.2883,0.3824,0.2641,0.1814,0.2716,0.3746,0.2325,0.2627,0.0025,0.1064,0.3081,0.1855,0.2281,null,null],
+                        "backgroundColor": ["rgba(237, 30, 121, 0)", "rgba(255, 255, 255, 0)"],
+                        "borderColor": "#ed1e79",
+                        "borderWidth": 2,
+                        "pointRadius": 0,
+                        "pointHoverRadius": 0
+                      }]
+                    },
+                    "options": {
+                       "scales": {
+                         "yAxes": [{
+                           "display": false
+                         }],
+                         "xAxes": [{
+                           "display": false
+                         }]
+                       },
+                      "hover": {
+                        "mode": "nearest",
+                        "intersect": false
+                      },
+                      "tooltips": {
+                        "hasIndicator": true,
+                        "yearStamp": false,
+                        "intersect": false
+                      }
+                    }
+                  }'>
+          </canvas>
+        </div>
+        <!-- End Chart -->
+      </div>
+          </div>
+    <!-- End Row -->
+      </div>
+</a>
+
+    <!-- End Card -->
+  </div>
+  </div>
+
+  
+  <p class="page-header-title">Search for:</p>
+
+  <form id="search_page_searchbar" action="/search" method="get">
+    <div class="input-group rounded">
+        <input id="search_page_searchQuery" class="searchQuery rounded" name="query" value="big red dog" aria-describedby="search_page_searchButton"></input>
+        <span class="input-group-text border-0 pressSearch" id="search_page_searchButton">
+            <i class="tio-search"></i>
+        </span>
+    </div>
+</form>
+<script>
+var input = document.querySelector('#search_page_searchQuery');
+
+var search_page_tagify = new Tagify(input, {transformTag: transformTag,
+    delimiters : ",| |\n",
+    templates : {
+        tag : function(tagData){
+            try{
+                return `<tag title='${tagData.value}' contenteditable='false' spellcheck="false" class='tagify__tag badge btn btn-xs btn-pill my-1 ml-1 ${tagData.class ? tagData.class : ""}' ${this.getAttributes(tagData)}>
+                    <x title='remove tag' class='tagify__tag__removeBtn'></x>
+                        <div>
+                            <span class='tagify__tag-text'>${tagData.value}</span>
+                        </div>
+                    </tag>`
+            }
+            catch(err){}
+        },
+    }
+});
+function search_page_submitForm() {
+    search_page_formElm[0].value = JSON.parse(search_page_formElm[0].value).map(x => x["value"]);
+    search_page_formElm.submit();
+}
+
+$("#search_page_searchButton").click(search_page_submitForm);
+function transformTag(tagData) {
+  if (tagData.value.startsWith("/r/")) {
+    tagData.class = "btn-soft-success";
+  } else if (tagData.value.startsWith("-/r/")) {
+    tagData.class = "btn-soft-danger";
+  } else if (tagData.value.startsWith("site:")) {
+    tagData.class = "btn-soft-secondary";
+  } else if (tagData.value.startsWith("score:")) {
+    tagData.class = "btn-soft-info";
+  } else if (tagData.value.startsWith("-site:")) {
+    tagData.class = "btn-soft-warning";
+  } else if (tagData.value.startsWith("before:")) {
+    tagData.class = "btn-info";
+  } else if (tagData.value.startsWith("after:")) {
+    tagData.class = "btn-info";
+  } else if (tagData.value.startsWith("-")) {
+    tagData.class = "btn-primary";
+  } else if (tagData.value === "socialgrep") {
+    tagData.class = "btn-soft-primary meta-egg";
+  } else {
+    tagData.class = "btn-soft-primary";
+  }
+}
+var search_page_formElm = document.querySelector('#search_page_searchbar');
+search_page_tagify.on('keydown', search_page_onTagifyKeyDown)
+
+function search_page_onTagifyKeyDown(e){
+  if( e.detail.originalEvent.code == 'Enter' &&   // "enter" key pressed
+      !search_page_tagify.state.inputText &&  // assuming user is not in the middle oy adding a tag
+      !search_page_tagify.state.editing       // user not editing a tag
+    ){
+    setTimeout(search_page_submitForm)
+  }
+}
+</script>
+
+
+<div class="row my-0">
+    <div class="col-12">
+        <small>Examples (hover for more info):
+        <div class="badge badge-pill btn btn-soft-primary" data-toggle="tooltip" title="Include 'term' in your search">term</div>
+        , <div class="badge badge-pill btn btn-primary" data-toggle="tooltip" title="Remove 'term' from your search">-term</div>
+        , <div class="badge badge-pill btn btn-soft-success" data-toggle="tooltip" title="Search in the community '/r/subreddit'">/r/subreddit</div>
+        , <div class="badge badge-pill btn btn-soft-danger" data-toggle="tooltip" title="Search anywhere but '/r/subreddit'">-/r/subreddit</div>
+        , <div class="badge badge-pill btn btn-soft-secondary" data-toggle="tooltip" title="Search only links to 'example.com'">site:example.com</div>
+        , <div class="badge badge-pill btn btn-soft-warning" data-toggle="tooltip" title="Search everything except for links to 'example.com'">-site:example.com</div>
+        , <div class="badge badge-pill btn btn-soft-info" data-toggle="tooltip" title="Search only content with at least 3 upvotes">score:3</div>
+        , <div class="badge badge-pill btn btn-info" data-toggle="tooltip" title="Search only content made on 2015-03-15 or before">before:2015-03-15</div>
+        , <div class="badge badge-pill btn btn-info" data-toggle="tooltip" title="Search only content made after 2015-03-15">after:2015-03-15</div>
+        </small>
+    </div>
+</div>
+
+<div class="row my-0">
+<div class="col-12 order-2 order-lg-1">
+<div class="page-header">
+  <div class="js-nav-scroller hs-nav-scroller-horizontal">
+    <span class="hs-nav-scroller-arrow-prev hs-nav-scroller-arrow-dark-prev" style="display: none;">
+      <a class="hs-nav-scroller-arrow-link" href="javascript:;">
+        <i class="tio-chevron-left"></i>
+      </a>
+    </span>
+
+    <span class="hs-nav-scroller-arrow-next hs-nav-scroller-arrow-dark-next" style="display: none;">
+      <a class="hs-nav-scroller-arrow-link" href="javascript:;">
+        <i class="tio-chevron-right"></i>
+      </a>
+    </span>
+
+    <!-- Nav -->
+    <ul class="nav nav-tabs nav-tabs page-header-tabs" id="pageHeaderTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#results_posts" role="tab">Posts <b class="ml-1">(2,498)</b></a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#results_comments" role="tab">Comments <b class="ml-1">(50,019)</b></a>
+      </li>
+                </ul>
+    <!-- End Nav -->
+  </div>
+</div>
+</div>
+  <div class="col-md-12 col-lg-8 order-3 order-lg-2">
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="results_posts" role="tabpanel">
+                <div class="scroll_posts">
+          <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    Clifford the Big Red Dog 2021 on Theater: Release Date, Trailer, Starring and more
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fu_fantasymsinfo">/r/u_fantasymsinfo</a>
+        , 2021-10-09, 14:32:51
+    </h6>
+
+        <p id="post_data_q4mhy1"></p>
+    <script>
+        document.getElementById("post_data_q4mhy1").innerHTML =
+                        marked("https:\/\/www.fantasymsinfo.com\/2021\/07\/clifford-big-red-dog-2021-on-theater.html\r\n Clifford the Big Red Dog 2021 on Theater: Release Date, Trailer, Starring and more\r\n #10112021 #2021 #english #movie #november #theater #cliffordthebigreddog #clifford #the #big #red #dog");
+    </script>
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/u_fantasymsinfo/comments/q4mhy1/clifford_the_big_red_dog_2021_on_theater_release/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://i.redd.it/7jys2tuuoxr71.jpg target="_blank">Clifford the Big Red Dog got raving reviews from CinemaCon. Predictions?</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>92</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fboxoffice">/r/boxoffice</a>
+        , 2021-10-07, 01:49:26
+    </h6>
+
+    
+
+      <button
+      class="btn btn-soft-secondary"
+      type="button"
+      data-toggle="collapse"
+      data-target="#post_data_q2ypaj_rich_results_collapse"
+      aria-expanded="false"
+      aria-controls="post_data_q2ypaj_rich_results_collapse"
+      onclick="document.querySelector('#post_data_q2ypaj_rich_results_image').src = 'https://i.redd.it/7jys2tuuoxr71.jpg';"
+    >
+      <i class="tio-photo-landscape"></i>
+    </button>
+    <div id="post_data_q2ypaj_rich_results_collapse" class="collapse">
+      <div class="card-body">
+        <img id="post_data_q2ypaj_rich_results_image" width="80%"></img>
+      </div>
+    </div>
+              
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/boxoffice/comments/q2ypaj/clifford_the_big_red_dog_got_raving_reviews_from/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://youtube.com/watch?v=4zH5iYM4wJo&amp;amp;feature=share target="_blank">Clifford the Big Red Dog (2021) - Official Trailer - Paramount Pictures</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fbobbyphelps">/r/bobbyphelps</a>
+                    <div class="badge badge-secondary badge-pill ml-0">NSFW</div>
+        , 2021-10-06, 21:02:23
+    </h6>
+
+    
+
+                  <button class="btn btn-soft-secondary" type="button" data-toggle="collapse" data-target="#post_data_q2tg0t_rich_results_collapse" aria-expanded="false" aria-controls="post_data_q2tg0t_rich_results_collapse">
+        <i class="tio-youtube"></i>
+      </button>
+      <div id="post_data_q2tg0t_rich_results_collapse" class="collapse">
+        <div class="m-2 youtube-rich-result-container">
+          <iframe class="youtube-rich-result" src="https://www.youtube.com/embed/4zH5iYM4wJo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+                
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/Bobbyphelps/comments/q2tg0t/clifford_the_big_red_dog_2021_official_trailer/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    TIL that during Michael Jackson&#039;s and Freddie Mercury&#039;s collab, delay was caused due to Jackson&#039;s insistence that his pet Clifford the big red dog be allowed to attend recording sessions. After a few days, Freddie just exploded &#039;I&#039;m not performing with a fucking dog sitting next to me each night.&#039;
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>51</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Ftodayilearned">/r/todayilearned</a>
+        , 2021-10-04, 09:34:32
+    </h6>
+
+        <p id="post_data_q122tm"></p>
+    <script>
+        document.getElementById("post_data_q122tm").innerHTML =
+                        marked("[deleted]");
+    </script>
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/todayilearned/comments/q122tm/til_that_during_michael_jacksons_and_freddie/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    Clifford the big red dog fandom is getting heated.
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Ftumblr">/r/tumblr</a>
+        , 2021-10-03, 04:35:01
+    </h6>
+
+        <p id="post_data_q0arct"></p>
+    <script>
+        document.getElementById("post_data_q0arct").innerHTML =
+                        marked("[deleted]");
+    </script>
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/tumblr/comments/q0arct/clifford_the_big_red_dog_fandom_is_getting_heated/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+<div class="row my-1">
+  <div class="col-11">
+    <div class="alert alert-soft-secondary card-subtitle" role="alert">It's a slow search... To stay in the know, <a href="https://www.socialgrep.com/alerts?query=big%20red%20dog&amp;type=posts" class="btn btn-secondary py-1 ml-2"><i class="tio-notifications"></i>Set an alert</a>
+    </div>
+  </div>
+</div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    Small family films: Ron’s Gone Wrong vs Clifford the Big Red Dog
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>4</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fboxoffice">/r/boxoffice</a>
+        , 2021-10-02, 18:44:13
+    </h6>
+
+        <p id="post_data_q00vzg"></p>
+    <script>
+        document.getElementById("post_data_q00vzg").innerHTML =
+                        marked("I think Clifford will win, despite Paramount+\n\n[View Poll](https:\/\/www.reddit.com\/poll\/q00vzg)");
+    </script>
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/boxoffice/comments/q00vzg/small_family_films_rons_gone_wrong_vs_clifford/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://www.reddit.com/r/CrazyIdeas/comments/pzkdeo/clifford_the_big_red_dog_but_its_a_horror_film/ target="_blank">Clifford the Big Red Dog but its a horror film.</a>
+                                      <span class="text-danger"><i class="font-weight-bold tio-double-caret-vertical"></i>0</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcrazyideas">/r/crazyideas</a>
+        , 2021-10-02, 00:07:21
+    </h6>
+
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CrazyIdeas/comments/pzkdeo/clifford_the_big_red_dog_but_its_a_horror_film/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    Will Clifford The Big Red Dog be released in Dolby Cinema?
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fdolbycinema">/r/dolbycinema</a>
+        , 2021-09-30, 04:54:12
+    </h6>
+
+        <p id="post_data_pycr16"></p>
+    <script>
+        document.getElementById("post_data_pycr16").innerHTML =
+                        marked("I hope that Clifford will release in Dolby Cinema. Because of the Kaju.");
+    </script>
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/DolbyCinema/comments/pycr16/will_clifford_the_big_red_dog_be_released_in/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://i.redd.it/n5z41azn9jq71.jpg target="_blank">has anyone&#039;s dog had this? it&#039;s a big red bump beside the paw pad</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>4</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fpitbulls">/r/pitbulls</a>
+        , 2021-09-30, 00:15:14
+    </h6>
+
+    
+
+      <button
+      class="btn btn-soft-secondary"
+      type="button"
+      data-toggle="collapse"
+      data-target="#post_data_py8704_rich_results_collapse"
+      aria-expanded="false"
+      aria-controls="post_data_py8704_rich_results_collapse"
+      onclick="document.querySelector('#post_data_py8704_rich_results_image').src = 'https://i.redd.it/n5z41azn9jq71.jpg';"
+    >
+      <i class="tio-photo-landscape"></i>
+    </button>
+    <div id="post_data_py8704_rich_results_collapse" class="collapse">
+      <div class="card-body">
+        <img id="post_data_py8704_rich_results_image" width="80%"></img>
+      </div>
+    </div>
+              
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/pitbulls/comments/py8704/has_anyones_dog_had_this_its_a_big_red_bump/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://www.slashfilm.com/617433/clifford-the-big-red-dog-will-release-simultaneously-in-theaters-and-on-paramount/ target="_blank">Clifford: The Big Red Dog Will Release Simultaneously In Theaters And On Paramount+</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fslashfilm">/r/slashfilm</a>
+        , 2021-09-28, 15:58:40
+    </h6>
+
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/Slashfilm/comments/px9gaa/clifford_the_big_red_dog_will_release/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://i.redd.it/sil9g2ox04q71.jpg target="_blank">Michael Clifford the big red dog</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2F5sos">/r/5sos</a>
+        , 2021-09-27, 20:59:34
+    </h6>
+
+    
+
+      <button
+      class="btn btn-soft-secondary"
+      type="button"
+      data-toggle="collapse"
+      data-target="#post_data_pwqgdy_rich_results_collapse"
+      aria-expanded="false"
+      aria-controls="post_data_pwqgdy_rich_results_collapse"
+      onclick="document.querySelector('#post_data_pwqgdy_rich_results_image').src = 'https://i.redd.it/sil9g2ox04q71.jpg';"
+    >
+      <i class="tio-photo-landscape"></i>
+    </button>
+    <div id="post_data_pwqgdy_rich_results_collapse" class="collapse">
+      <div class="card-body">
+        <img id="post_data_pwqgdy_rich_results_image" width="80%"></img>
+      </div>
+    </div>
+              
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/5sos/comments/pwqgdy/michael_clifford_the_big_red_dog/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://thepremiumproducts.com/clifford-the-big-red-dog-set-for-november-release-in-theaters-and-paramount/?feed_id=42157&amp;amp;_unique_id=6150560c56725 target="_blank">‘Clifford the Big Red Dog’ Set for November Release in Theaters and Paramount+</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fu_striking_star_803">/r/u_striking_star_803</a>
+        , 2021-09-26, 11:14:20
+    </h6>
+
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/u_Striking_Star_803/comments/pvrvox/clifford_the_big_red_dog_set_for_november_release/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    Clifford The Big Red Dog - Updated Box-Office Predictions?
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>13</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fboxoffice">/r/boxoffice</a>
+        , 2021-09-25, 21:08:39
+    </h6>
+
+        <p id="post_data_pvfm3s"></p>
+    <script>
+        document.getElementById("post_data_pvfm3s").innerHTML =
+                        marked("Since Clifford The Big Red Dog finally got a new release date which is November 10, 2021 (On a Wednesday) and will be in both theaters and Paramount+ the same-day similar to what they did with Paw Patrol: The Movie, what\u2019s your updated box-office predictions for Clifford The Big Red Dog?\n\nMy Prediction:\n\nOpening Weekend (3-Day): $15-17 million\n\nOpening Weekend (5-Day): $21-25 million\n\nDomestic Total: $50-70 million\n\nWorldwide Total: $100-150 million");
+    </script>
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/boxoffice/comments/pvfm3s/clifford_the_big_red_dog_updated_boxoffice/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://ca.finance.yahoo.com/news/jack-whitehalls-clifford-big-red-184900137.html target="_blank">Jack Whitehall&#039;s Clifford the Big Red Dog movie given new US release date</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>19</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fmovies">/r/movies</a>
+        , 2021-09-24, 19:01:28
+    </h6>
+
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/movies/comments/puqaj4/jack_whitehalls_clifford_the_big_red_dog_movie/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://maxblizz.com/clifford-the-big-red-dog-release-date-announced-by-paramount/ target="_blank">‘Clifford the Big Red Dog’ Release Date Announced By Paramount+ - MAXBLIZZ</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fu_marvelkidy">/r/u_marvelkidy</a>
+        , 2021-09-24, 11:57:26
+    </h6>
+
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/u_marvelkidy/comments/pui7ki/clifford_the_big_red_dog_release_date_announced/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    Groomer says dog made a big fidget and his scrotum hit the clippers. A red line going across. Later it looked like some broken skin in one spot. Does this happen often or should I have been angry and less understanding?
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fpuppy101">/r/puppy101</a>
+        , 2021-09-24, 08:43:35
+    </h6>
+
+        <p id="post_data_pufo19"></p>
+    <script>
+        document.getElementById("post_data_pufo19").innerHTML =
+                        marked("Does it happen all the time or is this something a groomer should be anticipating? My guy can go from chill to a spaz in the blink of an eye. I don&#039;t know what to think here.\n\nNow I have to force clean him and force him to lay down and expose his underside. I have to force him because he knows that what is going to happen is uncomfortable, but doesn&#039;t know it&#039;s best for him. I&#039;m concerned this might be sending alpha roll vibes? He&#039;s definitely not happy with me. (Std. Poodle)\n\nIt didn&#039;t look as bad earlier. It just looked red. Pup kept licking it before I could get anything to keep him from doing it. 30 minute drive home. Looks like a little spot has broken skin now and the overall sac is red. So I became concerned.\n\nI went and got \&quot;Hibiclens\&quot; antimicrobial soap or chlorhexiderm scrub.\&quot;\nRinsed his boys, then applied the soap, then washed the boys off.\n\nPut a pair of my briefs on him and used some medical wrap tape around the torso to keep him from getting at it. It seems to be working well to keep him from licking.\n\nCalling the vet tomorrow. And getting a cone or a neck tube thing. Maybe a doggy onsie? I assume I need to do basically the same thing as for a neuter.");
+    </script>
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/puppy101/comments/pufo19/groomer_says_dog_made_a_big_fidget_and_his/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://deadline.com/2021/09/clifford-the-big-red-dog-returns-to-q4-release-schedule-will-go-day-date-in-theaters-on-paramount-1234843483/ target="_blank">‘Clifford The Big Red Dog’ Going Day &amp;amp; Date Theaters, Paramount+</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fu_rapidkite">/r/u_rapidkite</a>
+        , 2021-09-24, 02:44:51
+    </h6>
+
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/u_RapidKite/comments/puaokj/clifford_the_big_red_dog_going_day_date_theaters/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://www.celebnation.com/news_feed/clifford-the-big-red-dog-sets-paramount-plus-and-theatrical-release-on-nov-10/?feed_id=992056&amp;amp;_unique_id=614d24aab874b target="_blank">‘Clifford The Big Red Dog’ Sets Paramount Plus and Theatrical Release on Nov. 10 After delaying its initial release, Para...</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fu_celebnationofficial">/r/u_celebnationofficial</a>
+        , 2021-09-24, 01:06:49
+    </h6>
+
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/u_celebnationofficial/comments/pu92qy/clifford_the_big_red_dog_sets_paramount_plus_and/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://www.thewrap.com/paramount-moves-clifford-the-big-red-dog-to-day-and-date-release-on-paramount/ target="_blank">Paramount Moves &#039;Clifford the Big Red Dog&#039; to Day-and-Date Release on Paramount+</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fnewsfeedforwork">/r/newsfeedforwork</a>
+        , 2021-09-24, 00:52:26
+    </h6>
+
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/NewsfeedForWork/comments/pu8u5e/paramount_moves_clifford_the_big_red_dog_to/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://www.thewrap.com/paramount-moves-clifford-the-big-red-dog-to-day-and-date-release-on-paramount/ target="_blank">Paramount Moves &#039;Clifford the Big Red Dog&#039; to Day-and-Date Release on Paramount+</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fnews_entertainment">/r/news_entertainment</a>
+        , 2021-09-23, 23:40:27
+    </h6>
+
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/News_Entertainment/comments/pu7mei/paramount_moves_clifford_the_big_red_dog_to/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://deadline.com/2021/09/clifford-the-big-red-dog-returns-to-q4-release-schedule-will-go-day-date-in-theaters-on-paramount-1234843483/ target="_blank">‘Clifford The Big Red Dog’ Returns To Q4 Release Schedule, Will Go Day &amp;amp; Date In Theaters &amp;amp; On Paramount+ November 10</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>257</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fboxoffice">/r/boxoffice</a>
+        , 2021-09-23, 23:11:10
+    </h6>
+
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/boxoffice/comments/pu73re/clifford_the_big_red_dog_returns_to_q4_release/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    ‘Clifford The Big Red Dog’ Going Day &amp;amp; Date in Theaters and On Paramount+ November 10th
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>2</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fmovies">/r/movies</a>
+        , 2021-09-23, 23:09:21
+    </h6>
+
+        <p id="post_data_pu72is"></p>
+    <script>
+        document.getElementById("post_data_pu72is").innerHTML =
+                        marked("[deleted]");
+    </script>
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/movies/comments/pu72is/clifford_the_big_red_dog_going_day_date_in/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    ‘Clifford The Big Red Dog’ Going Day &amp;amp; Date Theaters, Paramount+ on November 10th
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fmovies">/r/movies</a>
+        , 2021-09-23, 23:08:39
+    </h6>
+
+        <p id="post_data_pu721c"></p>
+    <script>
+        document.getElementById("post_data_pu721c").innerHTML =
+                        marked("[deleted]");
+    </script>
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/movies/comments/pu721c/clifford_the_big_red_dog_going_day_date_theaters/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    <a href=https://twitter.com/borys_kit/status/1441176110700498957?s=21 target="_blank">CLIFFORD THE BIG RED DOG will go day-and-date in theaters and on Paramount+ on November 10th</a>
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>13</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fblankies">/r/blankies</a>
+        , 2021-09-23, 23:04:04
+    </h6>
+
+    
+
+          <script>
+      function populate_post_pu6z2y_rich_results() {
+        document.getElementById('post_data_pu6z2y_rich_results_collapse').innerHTML = '<blockquote class="twitter-tweet" data-dnt="true" data-theme="light"><a href="https://twitter.com/borys_kit/status/1441176110700498957" class="card-subtitle ml-2 mt-2 text-info">Loading Tweet...</a></blockquote>';
+        twttr.widgets.load(document.getElementById('post_data_pu6z2y_rich_results_collapse'));
+      }
+    </script>
+    <button
+      class="btn btn-soft-secondary"
+      type="button"
+      data-toggle="collapse"
+      data-target="#post_data_pu6z2y_rich_results_collapse"
+      aria-expanded="false"
+      aria-controls="post_data_pu6z2y_rich_results_collapse"
+      onclick="populate_post_pu6z2y_rich_results();"
+    >
+      <i class="tio-twitter"></i>
+    </button>
+    <div id="post_data_pu6z2y_rich_results_collapse" class="collapse">
+    </div>
+          
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/blankies/comments/pu6z2y/clifford_the_big_red_dog_will_go_dayanddate_in/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h5 class="card-subtitle">
+                    Just found out there’s gonna be a Clifford the big red dog movie? That’s kinda cool
+                                      <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>4</span>
+                      </h5>
+
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fteenagers">/r/teenagers</a>
+        , 2021-09-23, 22:47:33
+    </h6>
+
+        <p id="post_data_pu6o1d"></p>
+    <script>
+        document.getElementById("post_data_pu6o1d").innerHTML =
+                        marked("HOLY FUCKING SHIT! FUCKING KENAN FUCKING THOMPSONS GONNA BE IN IT. FUCKING YES!! FUCKING GIVE ME! MY FUCKING! CREDIT CARD!!! NOW!!!!!!! \ud83d\udcb3\ud83d\udca5\ud83d\udcb3\ud83d\udca5\ud83d\udcb3\ud83d\udca5\ud83d\udcb3\ud83d\udca5\ud83d\udcb3\ud83d\udca5");
+    </script>
+    
+
+
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/teenagers/comments/pu6o1d/just_found_out_theres_gonna_be_a_clifford_the_big/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+<div class="row my-6 pb-8 ml-1">
+  <div class="col-11">
+    Need more results? <a class="btn btn-md btn-soft-primary transition-3d-hover mx-2 p-1 px-3" href="https://www.socialgrep.com/login"><i class="tio-account-circle"></i> Sign In</a> or <a class="btn btn-md btn-soft-primary transition-3d-hover mx-2 p-1 px-3" href="https://www.socialgrep.com/register"><i class="tio-user-add"></i> Register</a>
+  </div>
+</div>
+
+        </div>
+      </div>
+              <div class="tab-pane fade" id="results_comments" role="tabpanel">
+          <div class="scroll_comments">
+                        <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Ftumblr">/r/tumblr</a>
+        , 2021-10-09, 23:57:10
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span> score
+                                                      , <span class='text-success'>+0.51</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg1k0ak"></p>
+    <script>
+        document.getElementById("comment_data_hg1k0ak").innerHTML =
+                        marked("Emma Lee Elizabeth. My grandmothers middle names. Glad it wasn\u2019t because when I told my oldest about it she said \u201cthat\u2019s the name of the girl from Clifford the Big Red Dog!\u201d");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/tumblr/comments/q4taxz/mine_was_summer/hg1k0ak/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fhololive">/r/hololive</a>
+        , 2021-10-09, 23:28:54
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>26</span> score
+                                                      , <span class='text-success'>+1.00</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg1gio3"></p>
+    <script>
+        document.getElementById("comment_data_hg1gio3").innerHTML =
+                        marked("Fun fact: Inugami, while translating to Dog God, is actually a yokai like the Nekomata. Thus the naming scheme for both Korone and Okayu are that of demons. Okayu can also translate to rice porridge, while Korone is meant to sound similar to cornet, like a chocolate cornet (A type of sweet bread) alluding to Korone&#039;s lore of her as a baker.\n\nSome names are not easily translated, because the words they are based on can mean different things depending on the kanji used to spell the name. Sora for example has the name \&quot;Tokino\&quot; which can mean different things depending on the kanji, ranging from the two characters meaning \&quot;time\&quot; and \&quot;field\&quot; or \&quot;cleanse\&quot; and \&quot;in other words, you\&quot;. The hololive page on Virtual Youtubers directly translates her name as \&quot;Sky of Time\&quot;. \n\nThis leads into another issues where sometimes names don&#039;t particularly mean anything really. Sure the individual words have meaning, but they don&#039;t draw parallels to much. So keep that in mind when we go forward, since I&#039;m going to try and keep this as short as I can.\n\nRoboco would basically just be Robogirl. \n\nSakura Miko has the word Sakura, or \&quot;Cherry Blossom\&quot; (A Sakura tree is a cherry blossom tree), and Miko, or \&quot;Shrine Maiden\&quot;. So she&#039;d be the Cherry Blossom Shrine Maiden (Or Shrine Maiden of Cherry Blossoms)\n\nHoshmachi Suisei has the issue of Hoshimachi not actually being a word. It&#039;s more a combination of two words, Hoshi meaning star and Machi meaning city. So her name would be Starcity Comet.\n\nAZKi as far as I know doesn&#039;t mean anything, but it is possible there are some anagram meanings behind the letters.\n\nYozora Mel means \&quot;Night Sky Honey\&quot;\n\nShirakami, in the way it&#039;s spelled for Fubuki, means \&quot;White Above\&quot; Fubuki means Blizzard. Another way of spelling Shirakami would have meant \&quot;White God\&quot; which could have had some implications to Fubuki being a kitsune but eh, what are you gonna do?\n\nNatsuiro Matsuri means \&quot;Summer Colored Festival\&quot;\n\nAki Rosenthal can mean \&quot;Bright\/Glistening\/Autumn Rose Valley\&quot;\n\nAkai Haato means \&quot;Red Heart\&quot;. Haachama means \&quot;Eldritch Terror\&quot;*\n\n*Note: May not actually mean that.\n\nMinato Aqua means \&quot;Water Harbor\&quot;\n\nMurasaki Shion is... irritating. Murasaki is easy and means purple, but she isn&#039;t given Kanji for Shion, so it can mean anything from Aster, to Beautiful Sound\/Person, to Grace. I think Purple Aster fits well, since Aster is a type of flower.\n\nNakiri Ayame means... \&quot;Veggie Knife Iris\&quot;??? So I looked up the meaning to Nakiri and the only thing I could find was Veggie Knife. It is literally a kitchen knife used for cutting vegetables. \n\nYuzuki Choco means \&quot;Chocolate Citrus fruit\&quot;\n\nOozora Subaru is actually a fun one as it can directly translate to \&quot;to Unite the Heavens\&quot; since Oozora means \&quot;Heaven\/Big Sky\&quot; and Subaru means \&quot;to unite\/bunch together\&quot;\n\nOokami Mio means \&quot;Big God of Beautiful Cherry Blossoms\&quot;. Normally you&#039;d think Ookami to mean wolf, since Mio is one, but nope, the Kanji is specifically that to mean \&quot;Big God\&quot;.\n\nUsada Pekora is another odd one. Her name doesn&#039;t really mean anything, but if you use the two words that make up her name, that being Usa (short of Usagi) and Peko (A sound to indicate hunger), you&#039;d basically get \&quot;Hungry Rabbit\&quot;\n\nUruha Rushia means something along the lines of \&quot;Lapis Wing Moisture\&quot;... Okay this one I genuinely don&#039;t understand. They are a few Kanji spellings for Uruha but for some reason the one used was the characters for \&quot;Moisture\&quot; and \&quot;Wing\&quot;. Rushia itself is not written in Kanji and thus can mean a few things. Lapis was the most consistent.\n\nShiranui Flare means \&quot;Bright Light of Unknown Fire\&quot;. \n\nShirogane Noel means \&quot;White-Silver Christmas\&quot;\n\nHoushou Marine means \&quot;Treasure Bell of the Sea\&quot;\n\nAmane Kanata means \&quot;Far Away Heavenly Sound\&quot;\n\nTsunomaki Watame is another one where the name doesn&#039;t actually mean anything. Tsunomaki isn&#039;t an actual word, and is two words put together. Tsuno being \&quot;Horn\&quot; and maki meaning \&quot;Volume\/Roll\&quot; but Maki is more often simply a name. Watame can mean \&quot;Cotton Candy\&quot;\n\nTokoyami Towa means \&quot;Nonetheless Everlasting Darkness\&quot;. Towa can also mean Eternity instead of Nonetheless.\n\nHimemori Luna is another one of those combined word names. Hime means Princess, Mori means Forest and Luna means Moon. So you could say her name means \&quot;Moon Princess of the Forest\&quot;\n\nKiryu Coco is another odd one out. Her name Kiryu specifically comes from the game character Kiryu Kazuma, and the way it&#039;s spelled means \&quot;Genuine Paulownia\&quot;. Coco means \&quot;Chocolate Bean\&quot;.\n\nYukihana Lamy can mean \&quot;Snow Flower Friend\&quot;\n\nMomosuzu Nene can mean \&quot;Peaceful Peach Bell\&quot;. This is another two word mix of Momo and Suzu meaning Peach and Bell respectively.\n\nShishiro Botan is yet another two word combo of Shi and Shiro meaning White and Lion. So her name means \&quot;White Lion Peony\&quot;.\n\nOmaru Polka is another of those \&quot;Doesn&#039;t really mean anything\&quot; names. Omaru translated to \&quot;Rounded Tail\&quot; and Polka is simply a lively dance. \n\nMano Aloe would basically translate to \&quot;Devil of Soothing\&quot; since Mano means \&quot;Devil\&quot; and Aloe comes from \&quot;Aloe Vera\&quot;.\n\nAyunda Risu means \&quot;A dear squirrel girl\&quot;\n\nHoshinova Moona means \&quot;Moon&#039;s Brightening Star\&quot;. Once again, Hoshinova isn&#039;t exactly a word, but a combo of words consisting of Hoshi (Star) and Nova [Novus] (Extreme brightening of a star). Moona means Moon.\n\nI genuinely believe Airani Iofifteen doesn&#039;t mean anything. The closest I could find to any meaning was for Airani which meant \&quot;Having good manners, pretty and dedicated.\&quot;\n\nKureiji Ollie is a fun name. Kureiji is simply a phonetic spelling of the word Crazy in Japanese. This name can only really be in Katakana. Ollie is short for Olivia and means Olive Tree. Thus we get \&quot;Crazy Olive Tree\&quot;\n\nAnya Melfissa is like Iofi. Her name only really has Anya as having a meaning and that would be Gracious. Melfissa doesn&#039;t mean anything as far as I could find.\n\nPavolia Reine is an easy name, hooray! It means Peacock Queen.\n\nMori Calliope means \&quot;Death&#039;s Beautiful Voice\&quot;\n\nTakanashi Kiara is another fun name. Takanashi is actually a pun name! The way the Kanji for Takanashi is used combines the word for Eagle and Without, thus meaning \&quot;Small birds play\&quot; since without eagles, small birds can play safely! Kiara can mean things like Light, clear, first ray of sun, or, for more bird fun, cockatoo. Thus I like to believe a full translation of her name would be \&quot;Small birds play in the first ray of the sun\&quot;\n\nAs much as it would seem like Ina&#039;s name has no meaning, it actually does! Ninomae Ina&#039;nis actually has some wordplay to go on. Ninomae is simply written with the Kanji for One. This is because it uses a pun like Kiara, as Ni no mae means \&quot;Before two\&quot;. It&#039;s a special way of reading Kanji specifically for names. Ina&#039;nis on the other hand means \&quot;Empty\&quot; Thus her name means \&quot;Empty One\&quot;.\n\nGawr Gura is another one of those names I didn&#039;t expect to mean anything but lo and behold it does. Gawr comes from the word Gar which is a type of ray-finned fish. The name Gura comes from Gula and means Gluttony. I guess Gura&#039;s name means \&quot;Gluttonous Fish\&quot;\n\nAmelia&#039;s name specifically comes from the character John H Watson, the assistant to Sherlock Holmes. Amelia has even stated her full name was Amelia H Watson, showing even more that she is simply a homage to the character. \n\nIRyS name is like AZKi&#039;s but this time her name at least has some connection to the flower Iris.\n\nTsukumo Sana is a strange name. Tsukumo means Ninety Nine. Sana is likely meant to be an anagram of NASA. \n\nCeres Fauna is pretty easy too. Ceres is the Roman Goddess of Agriculture and Fertility. Fauna is the word used to refer to animals but is also a Roman Goddess of Animals, Nature, Spring and Fertility. So yeah. Big Mama energy right here. \n\nOuro Kronii is actually a pretty simple name to understand. Ouro comes from the word Ouroboros, the symbol of the snake eating it&#039;s tail symbolizing an endless cycle. Kronii is a play on words of Chrono meaning time. \n\nNanashi Mumei means \&quot;Anonymous\&quot;. This is a reference to Mumei&#039;s inability to remember things, even her own name. \n\nBaelz Hakos is a double anagram name. If you switch the letters around in each word it becomes Blaze Khaos. Khaos is pretty self explanatory, but Blaze can actually be a bit more than that. While the nature of blazes are chaotic and thus fitting, the name Baels can also draw inspiration from the demon Bael, one of the major demons from the Lesser Key of Solomon. Overall it&#039;s a fun name.\n\nAnd that&#039;s it. EVERY single one of the girl&#039;s names explained. If I missed anything, please feel free to mention it! Looking this stuff up is fun, but can be challenging when words are mishmashed together to form new words.");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/Hololive/comments/q4uc3i/what_is_the_meanings_behind_the_girls_names/hg1gio3/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fyoutooz">/r/youtooz</a>
+        , 2021-10-09, 23:11:24
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>2</span> score
+                                                      , <span class='text-success'>+0.84</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg1ed6e"></p>
+    <script>
+        document.getElementById("comment_data_hg1ed6e").innerHTML =
+                        marked("Cartoon Network Originals\n\n* Dexter\u2019s Laboratory (Dexter, Dee Dee)\n* The PowerPuff Girls (Blossom, Bubbles, Buttercup)\n* Ed, Edd N Eddy (Ed, Edd, Eddy, Rolf, Plank)\n* Courage The Cowardly Dog (Courage, Katz)\n* Sheep In The Big City (Sheep)\n* Whatever Happened To Robot Jones? (Robot Jones)\n* Codename: Kids Next Door (Numbuh 1, Numbuh 2, Numbuh 3, Numbuh 4, Numbuh 5)\n* Foster\u2019s Home For Imaginary Friends (Mac, Bloo, Wilt, Frankie)\n* Hi Hi Puffy AmiYumi (Ami, Yumi, Kaz)\n* Camp Lazlo (Lazlo, Raj, Clam, Slinkman, Scoutmaster Lumpus)\n\nClassic Warner Bros. Characters\n\n* Looney Tunes (Bosko, Goopy Geer, Porky, Daffy, Elmer, Bugs, Foghorn, Pepe, Marvin, Wile. E, Road Runner, Speedy)\n* MGM (Tom, Jerry, Droopy, Red Hot Riding Hood, Screwball Squirrel)\n* Hanna-Barbera (Huck, Jinks, Quick Draw, Baba Looey, Augie, Daddy, Top Cat, Benny, Penry, Kwicky)\n* Tiny Toon Adventures (Buster, Babs, Plucky, Hamton, Fifi, Gogo)\n* Animaniacs (Yakko, Wakko, Dot, Slappy, Skippy, Rita, Runt)");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/Youtooz/comments/q4tpe5/what_cartoon_network_shows_would_you_want_to_be/hg1ed6e/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fborrow">/r/borrow</a>
+        , 2021-10-09, 22:55:13
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span> score
+                                                      , <span class='text-success'>+0.97</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg1cdgl"></p>
+    <script>
+        document.getElementById("comment_data_hg1cdgl").innerHTML =
+                        marked("Hello \/u\/high_sunrise, \n\nB1) **Please read** all of our [Rules](https:\/\/www.reddit.com\/r\/borrow\/wiki\/index) and [Borrower FAQ&#039;s](https:\/\/www.reddit.com\/r\/borrow\/wiki\/borrowers)\n\nB2) **Do not delete this submission** (or ANY submission past or present), for any reason, or any of your comments as it will result in a ban.  If your request is fulfilled or you **no longer need the money** please do one or a combination of A) edit your post to reflect the change, B) flair your post as &#039;complete&#039; (the flair button is under the body text of the post), and\/or C) make a comment that it&#039;s no longer needed.\n\nB3) **Wait 24 hours** from this post to make another unless this post or the next is prearranged with a particular lender. If there are errors in this post you need to correct by posting again before 24 hours then you should contact a moderator\n\nB4) **Vet your lenders! Be careful who you send your personal information to** A) Moderators strongly suggest requiring that a lender comment on your REQ post before you send them any personal information. Banned or ineligible lenders cannot comment here. B) CHECK your lenders r\/borrow history by clicking [here.](https:\/\/www.loanmanager.co\/lender-check\/) Do this for every loan request you recieve. C) Are they **BLACKLISTED** or asking for **PROHIBITED ITEMS\/INFORMATION** (see [THIS LINK](https:\/\/www.reddit.com\/r\/borrow\/wiki\/lender_blacklist_prohibited_info))? Message moderators immediately D) Are they eligible (90+ day account, 1000+ karma, not banned) and active (any big account activity gaps?). Ultimately, you are free to accept loans from any user though you do so at your own risk. Loans made with ineligible\/banned users will not be tracked by LoansBot and you will not get credit for loans fulfilled by ineligible lenders, so proceed at your own risk\n\nB5) Understand and properly use all [LoansBot commands](https:\/\/www.reddit.com\/r\/LoansBot\/comments\/2ea912\/loansbot_basic_usage\/) to mark loan status\n\nB6) **If you have any questions or concerns whatsoever**, feel free to ask moderators by clicking **[HERE](https:\/\/www.reddit.com\/message\/compose?to=%2Fr%2Fborrow)**\n\n&amp;nbsp;\n\nLENDERS:\n\nL1) **Please read** all of our [Rules](https:\/\/www.reddit.com\/r\/borrow\/wiki\/index) and [Lender FAQ&#039;s](https:\/\/www.reddit.com\/r\/borrow\/wiki\/lenders)\n\nL2) **Vet your borrowers!** A) Check for any past REQ posts and scan the comments for red flags, B) Check the [UniversalScammerList](https:\/\/universalscammerlist.com\/search.php), C) Install [RedditScamLabeler](https:\/\/www.reddit.com\/r\/hardwareswap\/comments\/ad10kg\/meta_reddit_scam_labeler_extension_v15_update\/) to your browser, D) Install this quick [karma-earning investigation tool](https:\/\/www.reddit.com\/r\/TheseFuckingAccounts\/comments\/8gb6a8\/metabookmarklet_to_help_identify_karma_farming\/) to your browser, E) See these lists of sketchy user behaviors: [\&quot;Karma farmers\&quot;](https:\/\/www.reddit.com\/r\/borrow\/comments\/9htkug\/meta_be_aware_recent_influx_here_of_bot_managed\/), [How to identify high risk borrowers](https:\/\/www.reddit.com\/r\/borrow\/comments\/5n4rei\/meta_lenders_how_to_identify_users_who_are_likely\/)\n\nL3) Check to see if high_sunrise has a [**Post Deletion History**](https:\/\/www.reddit.com\/r\/borrowdeletes\/search?q=high_sunrise&amp;restrict_sr=on)\n\nL4) Check high_sunrise&#039;s [**Spam History**](https:\/\/www.reddit.com\/r\/TheseFuckingAccounts\/search?q=high_sunrise&amp;sort=new&amp;restrict_sr=on), [**RedditMetis profile**](https:\/\/www.redditmetis.com\/user\/high_sunrise), or [**Atomiks Analyzer Profile**](https:\/\/atomiks.github.io\/reddit-user-analyser\/#high_sunrise), or [Redetective profile](https:\/\/www.redective.com\/) [**!**](https:\/\/www.reddit.com\/r\/gcdeletes+gcremoves+gcmirror+gcarchive+gcalerts\/search?q=high_sunrise&amp;sort=new&amp;restrict_sr=on)\n\nL5) **We have a [Rule 19](https:\/\/www.reddit.com\/r\/borrow\/comments\/cz5myt\/meta_new_rule_concerning_lending_to_borrowers\/) that requires new lenders to contact existing lenders holding late debt to OK providing more funds to this post author (borrower). Please adhere to this rule or you will be banned!** Additionally, it is suggested that lenders take into account a user\u2019s **current open loans and repayment history when considering funding a loan**. This includes a) do they have any repayment history? Extra vetting may be required if not, b) are they asking for loans while still having some out (this is not against the rules)? **It is encouraged and courteous to contact current lenders to inquire about open loans**, c) How much has a borrower repaid historically (in total) vs. how much do they have out now in total? \&quot;Piling\&quot;, or lenders **continuously providing loans to borrowers with many already open loans, is highly discouraged** unless the borrower has a very solid repayment history\n\nL6) Understand and [properly use](https:\/\/www.reddit.com\/r\/borrow\/comments\/6a624m\/meta_the_usage_model_for_the_loan_command\/) all [LoansBot commands](https:\/\/www.reddit.com\/r\/LoansBot\/comments\/2ea912\/loansbot_basic_usage\/) to mark loan status\n\nL7) **For your convenience**, upon conclusion of this loan you can follow these links for prefilled posts regarding this loan - [PAID](https:\/\/www.reddit.com\/r\/borrow\/submit?selftext=true&amp;title=%5BPAID%5D%20%28\/u\/high_sunrise%29%20-%20%28Amount%29%20%28Early\/On%20Time\/Late%29&amp;message=$paid%20\/u\/high_sunrise), [LATE](https:\/\/www.reddit.com\/r\/borrow\/submit?selftext=true&amp;title=%5BLATE%5D%20%28\/u\/high_sunrise%29%20-%20%28Amount%29%20%28Days%20Late%29), [UNPAID](https:\/\/www.reddit.com\/r\/borrow\/submit?selftext=true&amp;title=%5BUNPAID%5D%20%28\/u\/high_sunrise%29%20%28%23City,%20State,%20Country%20of%20borrower%29%20-%20%28$Amount%29,%20%28Days%20Late%29&amp;message=$paid%20\/u\/high_sunrise)\n\n&amp;nbsp;\n\nHere is a copy of the original post:\n\nHi! I\u2019m needing to borrow $125 until 10\/15 for groceries, dog food, and gas until my payday on the 15th. I would like to establish a connection with a solid lender if possible. I can provide proof of income and ID as needed. I appreciate any help you can provide. Thank you.  \n\n&amp;nbsp;\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](\/message\/compose\/?to=\/r\/borrow) if you have any questions or concerns.*");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/borrow/comments/q4w102/req_125_newark_de_usa_will_repay_175_on_1015/hg1cdgl/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Famitheasshole">/r/amitheasshole</a>
+        , 2021-10-09, 22:05:46
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>16</span> score
+                                                      , <span class='text-success'>+0.85</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg166nz"></p>
+    <script>
+        document.getElementById("comment_data_hg166nz").innerHTML =
+                        marked("NTA.\n\nAlso.. did I read this correctly ? You are only one month in in your relationship and he already plans on moving in AND is already trying to force his own choices on you ? It might not be my place to say something but I have to.. BIG RED FLAG. \n\nFirst of all, if you have the financial ability to take care of this dog, then there\u2019s nothing to question. You want the dog, you take the dog. Secondly, I don\u2019t know your take on the matter of your boyfriend trying to move in with you, but you should really reconsider and think this through as this is a MASSIVE step being taken so soon in this relationship. Thirdly, we are talking about YOUR place. As the saying goes : your house, your rules.");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/AmItheAsshole/comments/q4uxzw/aita_for_getting_another_dog/hg166nz/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcfb">/r/cfb</a>
+        , 2021-10-09, 22:00:55
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>2</span> score
+                                                      , <span class='text-success'>+0.54</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg15jne"></p>
+    <script>
+        document.getElementById("comment_data_hg15jne").innerHTML =
+                        marked("LMFAO, LET THE BIG RED DOG EAT");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CFB/comments/q4rmzh/game_thread_penn_state_iowa_400pm_et/hg15jne/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcfb">/r/cfb</a>
+        , 2021-10-09, 21:58:59
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>47</span> score
+                                                      , <span class='text-danger'>-0.40</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg15alt"></p>
+    <script>
+        document.getElementById("comment_data_hg15alt").innerHTML =
+                        marked("Damn ESPN is reporting Clifford is out for the rest of the game. Turns out he is a big red dog and therefore ineligible.");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CFB/comments/q4rmzh/game_thread_penn_state_iowa_400pm_et/hg15alt/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcfb">/r/cfb</a>
+        , 2021-10-09, 21:52:39
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>8</span> score
+                                                      , <span class='text-success'>+0.86</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg14gpm"></p>
+    <script>
+        document.getElementById("comment_data_hg14gpm").innerHTML =
+                        marked("If the big red dog can&#039;t come back out and play for Penn St then I like Iowa&#039;s chances to win 19-17.");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CFB/comments/q4rmzh/game_thread_penn_state_iowa_400pm_et/hg14gpm/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcfb">/r/cfb</a>
+        , 2021-10-09, 21:32:09
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>3</span> score
+                                                  </h6>
+    <p id="comment_data_hg11qsx"></p>
+    <script>
+        document.getElementById("comment_data_hg11qsx").innerHTML =
+                        marked("Maybe this wouldn&#039;t have happened if Penn State&#039;s QB wasn&#039;t named after a big red dog.");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CFB/comments/q4rmzh/game_thread_penn_state_iowa_400pm_et/hg11qsx/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcfb">/r/cfb</a>
+        , 2021-10-09, 21:28:32
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>3</span> score
+                                                  </h6>
+    <p id="comment_data_hg119g5"></p>
+    <script>
+        document.getElementById("comment_data_hg119g5").innerHTML =
+                        marked("He is a big red dog");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CFB/comments/q4rmzh/game_thread_penn_state_iowa_400pm_et/hg119g5/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Ftoddlers">/r/toddlers</a>
+        , 2021-10-09, 21:22:32
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>10</span> score
+                                                      , <span class='text-success'>+1.00</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg10h0e"></p>
+    <script>
+        document.getElementById("comment_data_hg10h0e").innerHTML =
+                        marked("Children are like popcorn. They may start out the same, but they all pop on their own time. \n\nMy son is 29 months old. He was put in speech therapy at 23 months because he was next to non verbal. 16th percentile expressive speech but 75th percentile receptive, which is a big red flag. I felt exactly like you do - his friend was the exact same age (5 days younger) and a talking prodigy. It was difficult not to compare kids.\n\nBut barely six months later, my son \u201cgraduated\u201d speech therapy. He just\u2026 exploded. Started talking, singing, even making jokes. He went from 16th percentile expressive speech to EIGHTY NINTH. His speech is better now than some three year olds, after being non verbal at age 2.\n\nYour baby is perfect. You have done nothing wrong. Ignore YouTube, it\u2019s toxic. \n\nMy kid runs into walls and shakes it off like a dog and keeps going. He can\u2019t take his diaper off, much less shirts or pants. He\u2019s great at taking his shoes off, but then gets mad and can\u2019t figure out how to get them back on. He\u2019s pretty good with a fork, but anything on a spoon winds up in his lap. All toddlers learn at their own pace. He\u2019ll catch up. \n\nYou\u2019re a great mom and your son is blessed to have you. You. Have. Done. Nothing. Wrong. \n\nAll babies are different, and he\u2019s just taking his own time reaching milestones. He\u2019ll catch up when he wants to, but honestly, your son seems like a typical 2 year old to me!\n\nHugs.");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/toddlers/comments/q4pjt7/all_the_youtube_mom_channels_give_me_anxiety/hg10h0e/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Faskreddit">/r/askreddit</a>
+        , 2021-10-09, 21:13:48
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span> score
+                                                  </h6>
+    <p id="comment_data_hg0z9me"></p>
+    <script>
+        document.getElementById("comment_data_hg0z9me").innerHTML =
+                        marked("Clifford the Big Red Dog.\n\nI don&#039;t know what to expect.");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/AskReddit/comments/q4l86a/the_last_thing_you_searched_on_google_is_what/hg0z9me/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcfb">/r/cfb</a>
+        , 2021-10-09, 21:05:11
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>5</span> score
+                                                      , <span class='text-danger'>-0.57</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg0y316"></p>
+    <script>
+        document.getElementById("comment_data_hg0y316").innerHTML =
+                        marked("I&#039;m sorry but I just don&#039;t trust anyone named after a big red dog");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CFB/comments/q4rmzh/game_thread_penn_state_iowa_400pm_et/hg0y316/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fdragonage">/r/dragonage</a>
+        , 2021-10-09, 21:04:48
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>2</span> score
+                                                      , <span class='text-success'>+1.00</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg0y144"></p>
+    <script>
+        document.getElementById("comment_data_hg0y144").innerHTML =
+                        marked("**Prompt 5: A reflection, a conversation, a forgiveness**\n\n**Mahannon Lavellan** \\- Mahannon watched as Bull packed up his stuff from Skyhold. The Inquisition was no more. He was to be the leader of Divine Victoria&#039;s honor guard. The Bull&#039;s Chargers were no longer needed. Still, it was sad to see him go. \n\n\&quot;Hey, kadan,\&quot; said Bull, pulling the elf close to his chest, \&quot;Don&#039;t make that face, okay?\&quot;\n\nMahannon had been frowning and his big green eyes had become watery. \&quot;I can&#039;t help it. We&#039;ve been through so much together. I wanted you to meet my clan.\&quot;\n\n\&quot;If we pass through Wycome, I&#039;ll be sure to say &#039;hello.&#039;\&quot; The qunari smirked and kissed the elf on the forehead. \&quot;Look, I&#039;ll come to visit every once in a while. I&#039;m sure Red could get me in. It&#039;s not forever, kadan. We still have each other, look.\&quot; Bull brandished his half of the dragon&#039;s tooth. \&quot;No matter how far we&#039;re apart-\&quot;\n\n\&quot;We&#039;ll always be together,\&quot; finished Mahannon. The elf smiled and tugged on the qunari&#039;s necklace. \&quot;Kiss me before you leave.\&quot;\n\nBull smiled, \&quot;Anything for you, kadan.\&quot; The qunari leaned down and kissed the elf passionately on the lips. It seemed to last forever and not long enough. In truth, Bull was sad when they pulled away, but it had to be. The gold needed to come from somewhere.\n\nWhen he pulled away the elf had a sad look on his face. \&quot;Won&#039;t you please stay?\&quot; he pleaded. This only broke the qunari&#039;s heart more but duty called in other places. \n\n\&quot;Once I get too old for this crap, I&#039;ll retire. We&#039;ll go to Wycome and settle down there. Get a dog or something.\&quot;\n\n\&quot;Maybe a kid?\&quot;\n\n\&quot;A kid?!\&quot; Bull asked, shocked. The elf started to laugh at him, which made him a bit grouchy. \n\n\&quot;You should have seen the look on your face,\&quot; cackled Mahannon, \&quot;Ah haha. You&#039;d make a great dad, darling. Think about it. Little elves running about the place, trying to see who can pick up their dad&#039;s ax.\&quot;\n\n\&quot;Not now, kadan.\&quot;\n\nMahannon kissed the qunari on the cheek, standing on his toes. \&quot;Dareth shiral, vhenan.\&quot;\n\n\&quot;Goodbye, kadan.\&quot;\n\n**-------------------------------------------------------------------------------------------------------------------------------------**\n\n**Asena Adaar** \\- Asena walked to where Divine Victoria stood. She was surrounded by nobles, gleaming brightly as she took notes of each side in her stride. As a fellow mage, Vivienne was doing fabulously in her job.\n\n\&quot;My dear,\&quot; Vivienne greeted, \&quot;It&#039;s been so long since we&#039;ve talked.\&quot;\n\n\&quot;A lot happens in two years. How&#039;s everyone treating you?\&quot;\n\n\&quot;Oh, when you&#039;ve been in Court for as long as I have, you get used to the rumors.\&quot;\n\n\&quot;I&#039;m sure they can say little when you&#039;ve managed to wrangle in *both* the mages and the templars.\&quot;\n\n\&quot;And I was quite surprised when you elected me. I&#039;d thought you&#039;d might support your spymaster instead.\&quot;\n\n\&quot;Because I&#039;m still technically an apostate?\&quot;\n\n\&quot;Well, yes my dear.\&quot;\n\nAsena laughed, \&quot;Vivienne, for all the time we&#039;ve been friends, do you still need me to tell you why I picked you for Divine?&#039;\n\nVivienne returned a grin and said, \&quot;I just like to hear it every once in a while, my dear. It is ever so flattering.\&quot;\n\nThe qunari chuckled some more and humored the other mage, \&quot;Fine. I picked you because I saw how reckless the Circle mages could be. Fiona? Come on. &#039;I&#039;m an elf. Let&#039;s trust the guy who comes from the land where he enslaved all my people. Nothing could go wrong.&#039; What a fucking idiot.\&quot;\n\n\&quot;My, my. So vulgar, my dear.\&quot;\n\n\&quot;It&#039;s the truth.\&quot; Asena watched as the nobles passed her by. \&quot;They heard that, didn&#039;t they?\&quot;\n\n\&quot;It would be unwise to oppose you, dear. Not when you&#039;re with me.\&quot; Vivienne strode over to a day bed, \&quot;Come. I&#039;ve booked this appointment for ages.\&quot;\n\nAsena was confused but still went along with it. She sat down on the bed opposite of the Divine. \&quot;I didn&#039;t know that spas served qunari.\&quot;\n\n\&quot;You&#039;re the Inquisitor,\&quot; clarified Vivienne, \&quot;Stop fretting so much, my dear. It&#039;s spa day.\&quot; Vivienne turned and got up from the bed again. \&quot;Come, let&#039;s get changed.\&quot;\n\nAsena followed the human&#039;s every step. She got changed into a custom-fit bathing suit. It was a dark grey color, while Vivienne&#039;s was a beautiful blush and gold color. \n\n\&quot;How&#039;s your and Sera&#039;s relationship?\&quot; she asked.\n\n\&quot;Amazing,\&quot; Asena answered, \&quot;We got married.\&quot;\n\nVivienne smiled, \&quot;I suppose the Imperial garden does make for great scenery. Although I can&#039;t imagine how Sera would look in a dress, let alone even agree to the idea of marriage.\&quot;\n\n\&quot;She&#039;s the one who proposed.\&quot;\n\nVivienne&#039;s eyebrows raised in surprise, \&quot;Really. My dear, this age really does live up to its name.\&quot;\n\n\&quot;One unexpected thing after another. I could do with less of that though.\&quot;\n\n\&quot;Don&#039;t we all.\&quot;\n\nThe two chatted more about current and past events, musing over their adventuring days. Vivienne complained about the harsh desert sun in the Western Approach but longed to go back to the Emerald Graves. Asena wanted to go back to the Frostback Basin, even with all the gurguts everywhere. The Avaar were an interesting people to talk to. But alas, this peace was not to last forever and the Exalted Council would not wait.");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/dragonage/comments/q4n6gw/spoilers_alloc_time_to_be_storytellers_the_dragon/hg0y144/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcfb">/r/cfb</a>
+        , 2021-10-09, 20:48:44
+                              , <span class="text-danger"><i class="font-weight-bold tio-double-caret-vertical"></i>0</span> score
+                                                      , <span class='text-success'>+0.56</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg0vst9"></p>
+    <script>
+        document.getElementById("comment_data_hg0vst9").innerHTML =
+                        marked("Big red dog doesn\u2019t care about your defence");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CFB/comments/q4rmzh/game_thread_penn_state_iowa_400pm_et/hg0vst9/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcfb">/r/cfb</a>
+        , 2021-10-09, 20:21:48
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span> score
+                                                  </h6>
+    <p id="comment_data_hg0s1v2"></p>
+    <script>
+        document.getElementById("comment_data_hg0s1v2").innerHTML =
+                        marked("Absolutely should have. Don\u2019t worry I\u2019m still giving plenty of shit to The big red dog. Just saying you could at least watch the play and help your QB");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CFB/comments/q4rmzh/game_thread_penn_state_iowa_400pm_et/hg0s1v2/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fask">/r/ask</a>
+        , 2021-10-09, 20:11:58
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span> score
+                                                  </h6>
+    <p id="comment_data_hg0qou6"></p>
+    <script>
+        document.getElementById("comment_data_hg0qou6").innerHTML =
+                        marked("My name is Clifford and I had a Clifford the big red dog bobble-head glued to the dashboard of my 1985 oldsmobile cutlass that I called \&quot;the Mopacian Falcon\&quot;. Mopac is a little stretch of road here that goes along the Missouri-Pacific railroad.");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/ask/comments/q4qxw6/do_you_name_your_car_or_truck_if_so_what_is_it/hg0qou6/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Faskelectronics">/r/askelectronics</a>
+        , 2021-10-09, 20:05:16
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>3</span> score
+                                                  </h6>
+    <p id="comment_data_hg0psev"></p>
+    <script>
+        document.getElementById("comment_data_hg0psev").innerHTML =
+                        marked("Clifford a big red dog, not all dogs are red xD, google relay drivers. The little things on the right is likely a linear regulator or a fet");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/AskElectronics/comments/q4ssp8/the_board_is_supposed_to_be_relays_that_you_can/hg0psev/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcfb">/r/cfb</a>
+        , 2021-10-09, 20:00:07
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span> score
+                                                  </h6>
+    <p id="comment_data_hg0p4n7"></p>
+    <script>
+        document.getElementById("comment_data_hg0p4n7").innerHTML =
+                        marked("Is a big red dog about to storm Iowa city? All to be revealed over the next 3 hours");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CFB/comments/q4rmzh/game_thread_penn_state_iowa_400pm_et/hg0p4n7/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcumslutsorbust">/r/cumslutsorbust</a>
+                    <div class="badge badge-secondary badge-pill ml-0">NSFW</div>
+        , 2021-10-09, 18:10:28
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span> score
+                                                      , <span class='text-danger'>-0.42</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg0aeix"></p>
+    <script>
+        document.getElementById("comment_data_hg0aeix").innerHTML =
+                        marked("#Some of my favorite [Nala Brooks porn](https:\/\/cumalloverus.com\/bios\/pornstar-nala-brooks\/) videos:\n1. ###[My Sick Big Tittied Girlfriend Was Begging For A Blowjob - OnlyTeeenBlowjobs](https:\/\/cumalloverus.com\/videos\/pornstar-nala-brooks\/ph6137d4dfe09b6-my-sick-big-tittied-girlfriend-was-begging-for-a-blowjob---onlyteeenblowjobs.html)\n2. ###[Dog House - Cute Nala Brooks Fucks Jon Rogue&#039;s Juicy Cock With Her Amazing Tits](https:\/\/cumalloverus.com\/videos\/pornstar-nala-brooks\/ph612774188b6b3-dog-house---cute-nala-brooks-fucks-jon-rogue-s-juicy-cock-with-her-amazing-tits.html)\n3. ###[LUBED Sticky Lubed Up Fuck For Excited Red Head Nala](https:\/\/cumalloverus.com\/videos\/pornstar-nala-brooks\/ph6047b3f485d5d-lubed-sticky-lubed-up-fuck-for-excited-red-head-nala.html)\n4. ###[Juicy Curvy Babe Nala Brooks Bounces On Big Dick](https:\/\/cumalloverus.com\/videos\/pornstar-nala-brooks\/ph60835e79cb310-juicy-curvy-babe-nala-brooks-bounces-on-big-dick.html)\n5. ###[Hot Busty Redhead Nala Brooks Gives Sensual BJ and Fuck - S13:E2](https:\/\/cumalloverus.com\/videos\/pornstar-nala-brooks\/ph609be62af1e16-hot-busty-redhead-nala-brooks-gives-sensual-bj-and-fuck---s13-e2.html)\n\n\n69 inch waitress");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CumslutsOrBust/comments/q4qopc/1014_nala_brooks_lubed_sticky_lubed_up_fuck_for/hg0aeix/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fcuratedtumblr">/r/curatedtumblr</a>
+        , 2021-10-09, 17:47:53
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>2</span> score
+                                                      , <span class='text-success'>+1.00</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg07b3s"></p>
+    <script>
+        document.getElementById("comment_data_hg07b3s").innerHTML =
+                        marked("*Image Transcription: Tumblr [1\/2]*\n\n---\n\n**thedungeonofbaddecisions**\n\n**DM:** Time to get out the Monster Manual, or as some people like to call it: the Waifu Catalogue.\n\n**Me:**  WHAT.\n\n---\n\n**blimpyou**\n\nSometimes I smash or pass the whole book\n\n---\n\n**thedungeonofbaddecisions**\n\n**What the fuck guys**\n\n---\n\n**ultimatefangirl-exe**\n\nI like to smash or pass monsters in DnD and Pathfinder books.\n\n---\n\n**evilassumptions**\n\n### BugBears are legit. \n\n---\n\n**thedungeonofbaddecision**\n\n***can we not***\n\n---\n\n**cranky-witch-ladygaia**\n\n@celestial-guardian-ragnarok @chika-ann\n\nSmash or pass\n\n---\n\n**chika-ann**\n\nHeh... that depends... what&#039;s on the list\n\n---\n\n**thedungeonofbaddecisions**\n\ndogs\n\nthere are dogs on that list\n\nyou wanna fuck a dog\n\nwait\n\nthis is tumblr\n\ndon&#039;t answer that\n\n---\n\n**sciencegenius**\n\ndogs? pass.\n\nLiches tho....... ;)))\n\n---\n\n**thedungeonofbaddecisions**\n\nThat&#039;s actually not at terrible entry to thirst after. I mean, you could *technically* count it as necrophilia, but its  *consensual* necrophilia, so you do you.\n\n---\n\n**definitelybeholderrpgideas**\n\nWhat the fuck\n\n---\n\n**thedungeonofbaddecisions**\n\nOf all the reblogs and additions to this post, *this* is the one you&#039;re shocked by?\n\n---\n\n**definitelybeholderrpgideas**\n\nConsensual necrophilia is not a phrase I thought I&#039;d hear. Then again this is tumblr, so maybe that&#039;s on me \n\n---\n\n**noblevagrant65**\n\nHot take: the term consensual necrophilia also applies to vampires, since they&#039;re undead creatures, Wanna fuck Strahd? you&#039;re in the same boat with the lich fuckers. \n\nHoweve, what I think the real treasure we&#039;re all sleeping on is liches....in love. Just immortal wizard gals being pals.\n\n---\n\n**thedungeonofbaddecisions**\n\nI am absolutely here for the immortal undead lesbians\n\n---\n\n**tigerboy007**\n\nIS IT STILL NECROPHILIA IF YOU&#039;RE DEAD TOO??\n\n---\n\n**thedungeonofbaddecisions**\n\nI don&#039;t think so?\n\n---\n\n**hallelujahmomentz**\n\nOk next topic is a dragon and a human beastiality for the dragon? \n\n---\n\n**thedungeonofbaddecisions**\n\nboth are sentient, so its just interspecies sex.\n\n---\n\n**novas-grimoire**\n\n...I am now reminded of that argument I got into about whether or not a half-dragon would have a cloaca. \n\n---\n\n**thedungeonofbaddecisions**\n\n[*A screenshot of a Google auto-correct search option, which reads:*]\n\nDid you mean: earlier on this post\n\n---\n\n**pwbi**\n\nThis post is an entire dungeon of bad decisions at this point\n\n---\n\n**choryllis**\n\nI think you mean legendary decisions\n\n---\n\n**thedungeonofbaddecisions**\n\nLegendary for not being bad\n\nThis is not what i expected when i started this blog\n\nTo be fair, i wasnt expecting a whole lot when i started this blog in 2014\n\nBut it definitely didnt include 10k notes of thirsty monsterfuckers\n\n---\n\n**cephalon-jaunde**\n\n11 approaching 12 thousand\n\n---\n\n**thedungeonofbaddecisions**\n\nFuck you&#039;re right\n\n---\n\n**drizzlearcher**\n\nok but can we just talk about abberations cuz like they&#039;re intelligent and adults but their minds are inscrutable to humans. so like does that mean you can consent to sex with them? cuz you&#039;re on wayyyy different levels of intelligence? but also they&#039;re an adult with the capacity to give and understand consent? but could a normal sentient&#039;s mind comprehend consenting to sex with them? help me out here i&#039;m confused.\n\n---\n\n**thedungeonofbaddecisions**\n\nIf both parties are sentient, its just interspecies sex, stop trying to overcomplicate things. Just because one species is better at calculus does not complicate the less intelligent species&#039; capacity for consent. \n\n---\n\n**drizzlearcher**\n\ntrue but in most fiction an abberation&#039;s mind functions in a completely different way from a non-abberation. essentially what i mean to point out was the potential issue of a blue and orange morality\n\n---\n\n**thedungeonofbaddecisions**\n\nAre you seriously trying to start a philosophical debate on *this* post? \n\nLike I admire the chutzpah, dude, but it doesn&#039;t matter if one species has a totally alien concept of everything. If both parties know what they want, communicate what they want, and agree with each other on it, its fully informed consent on each side and therefore just regular interspecies sex. Sentience is sentience, even if the way it manifests is wildly different.\n\n---\n\n**drizzlearcher**\n\nhonestly? i was drunk out of my mind both times i saw this post. also you make a very good point and are correct that flavors of sentiense aside, as long as both parties are sentient and consent it&#039;s fine. i apologize for drunk me&#039;s ramblings.\n\n--- \n\n**thedungeonofbaddecisions**\n\n... you get philosophically argumentative when you&#039;re drunk? That&#039;s a mood, my friend\n\n---\n\n**curriedsugar**\n\nwhat even is this post \n\n--- \n\n**spaceunicornslover**\n\nNot sure. I lost it somewhere and I&#039;m not where. Did it change from one subject to another or is it just me not understanding?\n\n---\n\n**queen4fandoms**\n\nD&amp;D logic &amp; arguments\n\n---\n\n**thedungeonofbaddecisions**\n\nthis post is a disaster and a tragedy and the essence of both D&amp;D and Tumblr, what do y&#039;all want from me\n\n---\n\n**anagramofbrat**\n\n...wooooow\n\n---\n\n**cipheramnesia**\n\nThis post is truly a journey and yet if we look back to the innocent times of that original post we must all find ourselves reflecting: what did OP expect was going to happen?\n\n---\n\n**thedungeonofbaddecisions**\n\nHonestly? I didn&#039;t really have any expectations. I figured, \&quot;hey, my DM said something stupid and funny, perfect, I&#039;ll put it on the blog with the rest of the stupid and funny things people say in my D&amp;D games,\&quot; and figured that would be that. \n\nThat being said, this *is* the Dungeon of *Bad* Decisions. As in, there are no good choices made here.\n\nAlso my IRL dump stat was probably Wisdom. I definitely have at least a -2 to Perception and Insight, I can tell you that. Forethought is not ny specialty.\n\n---\n\n**definitelybeholderrpgideas**\n\nOkay but this does raise the question of hyper-inteligent races with incredibly long lifespans. For instance, if a horny bard was trying to screw a god, from the bard&#039;s perspective they&#039;re both mature adults. However, by the standards of the god who has lived for millions of years and has a mind the size of a galaxy, the bard may be just a child. So, assuming the god consents, what would the implications of that be? \n\nNow if you excuse me I need to go bleach my brain and stop thinking about this. \n\n---\n\n**thedungeonofbaddecisions**\n\nOk but was it really necessary to make us suffer with you\n\nDid the potential for eldritch pedophilia *really* need to be put out on the internet\n\n---\n\n**termiinallycapriiciiou2**\n\nYes, yes it did. \n\nI&#039;d argue to follow the harkness rule, as long as both the god &amp; the mortal are considered adults for their species, its not pedophilic. \n\nIn the same vein, if an elf was 300 years old and a gos was like 5000 but the age of majority for that pantheon is 6000 then it *is* pedophilic. \n\n---\n\n**definitelybeholderrpgideas**\n\nBut what it, even though the mortal is technically a mature adult, the god doesn&#039;t see them as such? Sure, at that point it wouldn&#039;t technically be wrong, but stil...\n\n---\n\n**souldevowerer98**\n\nMade the mistake of sitting for half an hour reading the notes after reading this post. Now I send out the knowledge of this post and its depravity to any of you who haven&#039;t seen it already.\n\n---\n\n**thedungeonofbaddecisions**\n\nI&#039;ve always subscribed to the friendship of \&quot;I Saw Something Horrible on the Internet, Suffer With Me\&quot;\n\n---\n\n**thundering-hoof**\n\nAlways beautiful to see this come back, but at the same time. How does a dragon bone a turtle to get a Dragon Turtle? Or for that matter, how does one get a Kraken? I want someone to explain why we haven&#039;t seen the offspring of a dragon boning a centaur!!! Serious, centaurs need Overpowered Loves as well!!\n\n---\n\n**thedungeonofbaddecisions**\n\nYou&#039;re assuming that dragon turtles and krakens are hybrids and not their own independent species, when I&#039;m pretty sure they are.\n\n---\n\n**newlywebb722**\n\n&gt;[*The \&quot;Galaxy Brain\&quot; meme, depicting text, accompanied by images of the human brain with progessively more light and neurons in them.*]\n\n&gt;[*\&quot;Small\&quot; brain - A blue X-Ray of the human skull from the side, with a small brain inside it.*]\n&gt;\n&gt;Local murderhobo can&#039;t identify monsters \n\n&gt;[*\&quot;Normal\&quot; Brain - an image of the human brain from the other side, with numerous bright points representing neurons*]\n&gt;\n&gt;Responsible adventurer takes notes on monsters and learns from experience \n\n\n&gt;[*\&quot;Normal\&quot; brain again - A red image of the human brain, with multiple light points representing neurons, and a blinding light emanating from its centre.*]\n&gt;\n&gt;Studious player reads the monster manual like a massive nerd \n\n&gt;[\&quot;Big\&quot; brain - The brain is now illuminated green, taking up a majority of the skull from a 3\/4 angle. Beams of light are shooting out of it, with stars attached to them.*]\n&gt;\n&gt;Real hero learns everything from the waifu catalog\/smash-or-pass Tumblr post\n\n---\n\n**thedungeonofbaddecisions**\n\nI&#039;ve been given another meme!\n\n---\n\n**carolxdanvers**\n\nDamn this post just kept going\n\n---\n\n**thedungeonofbaddecisions**\n\n\ud83c\udfb5its the pain that never ends~\ud83c\udfb5\n\n---\n\n**novas-grimoire**\n\nSo another game, we got into a discussion about humans mating with birdfolk - specifically Ravenfolk - and about bird mating practices.\n\n---\n\n^^I&#039;m&amp;#32;a&amp;#32;human&amp;#32;volunteer&amp;#32;content&amp;#32;transcriber&amp;#32;for&amp;#32;Reddit&amp;#32;and&amp;#32;you&amp;#32;could&amp;#32;be&amp;#32;too!&amp;#32;[If&amp;#32;you&#039;d&amp;#32;like&amp;#32;more&amp;#32;information&amp;#32;on&amp;#32;what&amp;#32;we&amp;#32;do&amp;#32;and&amp;#32;why&amp;#32;we&amp;#32;do&amp;#32;it,&amp;#32;click&amp;#32;here!](https:\/\/www.reddit.com\/r\/TranscribersOfReddit\/wiki\/index)");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/CuratedTumblr/comments/q3x7lt/about_dnd_and_punnet/hg07b3s/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Faskreddit">/r/askreddit</a>
+        , 2021-10-09, 17:47:33
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span> score
+                                                  </h6>
+    <p id="comment_data_hg079gk"></p>
+    <script>
+        document.getElementById("comment_data_hg079gk").innerHTML =
+                        marked("clifford the big red dog");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/AskReddit/comments/q4m2dy/without_revealing_your_age_whats_something_you/hg079gk/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fworldnews">/r/worldnews</a>
+        , 2021-10-09, 17:10:52
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>1</span> score
+                                                      , <span class='text-danger'>-0.79</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg027t1"></p>
+    <script>
+        document.getElementById("comment_data_hg027t1").innerHTML =
+                        marked("&gt; I assumed as much.\n\nIt&#039;s not a difficult assumption, very few people use it - and many of those that do wouldn&#039;t struggle to get visas. And those who can&#039;t get visas are obviously not wanted by the third country in question - why should they be forced into accepting them? \n\n&gt; wouldn&#039;t say most people don&#039;t purchase from outside the UK\n\nI would. Certainly in their day to day lives. What are you purchasing that has to come from the EU?\n\n&gt; I don&#039;t think it&#039;s fair or logical to compare the EU to a dictator.\n\nThat isn&#039;t what I was I was doing. I was making that point that you don&#039;t actually need to object to a single policy by an entity to be against the rule of the entity in principle.\n\n&gt; But our government doesn&#039;t?\n\nI&#039;ve actually been quite surprised that the UK government hasn&#039;t caved into anywhere near as much as I feared too business pressure re. a shortage of cheap EU labour over the last few months.\n\nWhat&#039;s more is if the current Gov was the lap dog of big business we wouldn&#039;t have the EU at all. So I am not sure that angle really washes.\n\n&gt; The middle class haven&#039;t lost anything here, they almost certainly have the means to move to the EU still\n\nAgreed.\n\n&gt; The only people losing out is the working class who have had EU opportunities snatched away from them\n\nThey never used them. Honestly I have no idea where you live or what sort of background you grew up in. But I spent some of upbringing on a shitty council estate - us aspiration teenagers were not talking about how we were going to setup shop in EU member states. But many many many of them would go into professions where wages have been suppressed. \n\n&gt; t, apart from a few jobs having slight pay increases, overall the working class is far worse off now.\n\nStrongly disagree. Firstly the jobs market revolution is just starting. Secondly the point is if you don&#039;t like your current Low Wage job, you&#039;ve got options to work in other sectors which are now seeing massive wage inflation.\n\n&gt;  But brexit has made emigration to Britain less appealing for the highly skilled workers (doctors, vets, scientists, engineers) because of all the additional red-tape.\n\nI don&#039;t think you are wrong, but I do think a controlled immigration system is better than uncontrolled (for the reason I already mentioned) and this is part and parcel of that.\n\nAdditionally I don&#039;t see why EU doctors, vets, scientists, engineers should have one rule and those same skilled jobs from elsewhere in the world should have another. \n\n&gt; But no, clearly we have very different views to what constitutes benefits.\n\nNo problem. I hope you can see in time that Brexit is going to lead to a fairer Britain. If the jobs market revolution continues I am going to be very optimistic for the future.");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/worldnews/comments/q4974g/poland_stokes_fears_of_leaving_eu_in_polexit/hg027t1/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Fjuicewrld">/r/juicewrld</a>
+        , 2021-10-09, 17:05:36
+                              , <span class="text-info"><i class="font-weight-bold tio-caret-up"></i>3</span> score
+                                                      , <span class='text-danger'>-0.46</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hg01hqc"></p>
+    <script>
+        document.getElementById("comment_data_hg01hqc").innerHTML =
+                        marked("Man of the year\n\nMr heartbreak\n\nRed dead redemption \n\nAnother thing to do it\n\nKiki\n\nBig dog \n\nChrome \/ cardi b chopper\n\nBad news \n\nGirlfriend \n\n90210\n\nSour \n\nBoondocks \n\n2 Percs\n\nMatt hardy\n\nBarry bonds \/ dark arts\n\nTic tac toe \n\nContained \n\nCarry it\n\nMade it work \/ under 25\n\nGood times \n\nTroubled kids \n\nCake\n\nWe don\u2019t get along \n\nI\u2019m pretty sure these were all highly desired songs at one point");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/JuiceWRLD/comments/q4i3xn/grails_that_have_already_leaked/hg01hqc/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-11">
+          <!-- Card -->
+<div class="card card-hover-shadow">
+  <div class="card-body">
+    <h6 class="card-subtitle">
+        <a href="https://www.socialgrep.com/search?query=%2Fr%2Forangecounty">/r/orangecounty</a>
+        , 2021-10-09, 16:35:18
+                              , <span class="text-danger"><i class="font-weight-bold tio-caret-down"></i>-5</span> score
+                                                      , <span class='text-info'>+0.22</span> sentiment rating
+                        </h6>
+    <p id="comment_data_hfzxdta"></p>
+    <script>
+        document.getElementById("comment_data_hfzxdta").innerHTML =
+                        marked("That&#039;s another big shelter-speak red flag ...\&quot;dog selective\&quot;. Let me guess, no cats either? People launder the hell out of these dogs. They do it with a good heart, but the outcome is not always good. \n\nI hope you don&#039;t place that dog in home with children. Age three is the magic number where their true natures *really* come out. If he&#039;s \&quot;selective\&quot; now, it&#039;s only going to get worse.");
+    </script>
+    <small class="card-subtitle"><a href="https://old.reddit.com/r/orangecounty/comments/q480fg/he_is_at_priceless_pets_in_costa_mesa/hfzxdta/" target="_blank">Permalink</a>
+        </small>
+  </div>
+</div>
+
+      </div>
+  </div>
+<div class="row my-6 pb-8 ml-1">
+  <div class="col-11">
+    Need more results? <a class="btn btn-md btn-soft-primary transition-3d-hover mx-2 p-1 px-3" href="https://www.socialgrep.com/login"><i class="tio-account-circle"></i> Sign In</a> or <a class="btn btn-md btn-soft-primary transition-3d-hover mx-2 p-1 px-3" href="https://www.socialgrep.com/register"><i class="tio-user-add"></i> Register</a>
+  </div>
+</div>
+
+          </div>
+        </div>
+          </div>
+    </div>
+    <div class="col-md-12 col-lg-3 order-1 order-lg-3">
+      <div class="card py-2 px-4 my-4 mx-2">
+        <div class="text-center card-subtitle h5 mb-3">Live Actions</div>
+          <div class="container">
+            <div class="row">
+              <div class="col-4 px-2">
+                                      <a class="btn btn-block btn-soft-secondary mb-0 mx-auto px-0" data-toggle="tooltip" title="Export results" href="https://www.socialgrep.com/exports?query=big%20red%20dog">
+                                    <i class="tio-download-to"></i>
+                </a>
+              </div>
+              <div class="col-4 px-2">
+                                      <a class="btn btn-block btn-soft-secondary mb-0 mx-auto px-0" data-toggle="tooltip" title="Set an alert" href="https://www.socialgrep.com/alerts?query=big%20red%20dog">
+                                    <i class="tio-notifications"></i>
+                </a>
+              </div>
+              <div class="col-4 px-2">
+                                  <form id="new_bookmark" action="https://www.socialgrep.com/bookmark/new" method="POST">
+                    <input type="hidden" name="query" value="big red dog">
+                    <input type="hidden" name="_token" value="LYHX2MpznCwIhUQrh8cglEE5F4DJJI0aD35phq1o">                    <button class="btn btn-block btn-soft-secondary mb-0 mx-auto px-0" type="submit" data-toggle="tooltip">
+                      <i class="tio-bookmark"></i>
+                    </button>
+                  </form>
+                              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 text-center mx-auto px-0">
+                              </div>
+              <div class="col-4 text-center mx-auto px-0">
+                              </div>
+              <div class="col-4 text-center mx-auto">
+                              </div>
+            </div>
+                      </div>
+        </div>
+              <div class="my-5 mb-9">
+          <h2>Query breakdown by source domain</h2>
+          <div class="progress rounded-pill mb-2">
+    <div class="progress-bar sources-0" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-0'></span> i.redd.it"></div>
+    <div class="progress-bar sources-1" role="progressbar" style="width: 6.2%" aria-valuenow="6.2" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-1'></span> self.whowouldwin"></div>
+    <div class="progress-bar sources-2" role="progressbar" style="width: 6%" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-2'></span> self.showerthoughts"></div>
+    <div class="progress-bar sources-3" role="progressbar" style="width: 4.8%" aria-valuenow="4.8" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-3'></span> youtube.com"></div>
+    <div class="progress-bar sources-4" role="progressbar" style="width: 3.1%" aria-valuenow="3.1" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-4'></span> imgur.com"></div>
+    <div class="progress-bar sources-5" role="progressbar" style="width: 3.1%" aria-valuenow="3.1" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-5'></span> self.askreddit"></div>
+    <div class="progress-bar sources-6" role="progressbar" style="width: 2.4%" aria-valuenow="2.4" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-6'></span> youtu.be"></div>
+    <div class="progress-bar sources-7" role="progressbar" style="width: 2.3%" aria-valuenow="2.3" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-7'></span> i.imgur.com"></div>
+    <div class="progress-bar sources-8" role="progressbar" style="width: 2.1%" aria-valuenow="2.1" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-8'></span> reddit.com"></div>
+    <div class="progress-bar sources-9" role="progressbar" style="width: 1.5%" aria-valuenow="1.5" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-9'></span> v.redd.it"></div>
+<div class="progress-bar sources-10" role="progressbar" style="width: 53.5%" aria-valuenow="53.5" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Other"></div>
+</div>
+<ul class="list-inline">
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=site%3Ai.redd.it">
+    <span class="legend-indicator sources-0"></span>
+    <span class="font-weight-bold">
+      i.redd.it
+          </span>
+    <span class="text-secondary">15%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=site%3Aself.whowouldwin">
+    <span class="legend-indicator sources-1"></span>
+    <span class="font-weight-bold">
+      self.whowouldwin
+          </span>
+    <span class="text-secondary">6.2%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=site%3Aself.showerthoughts">
+    <span class="legend-indicator sources-2"></span>
+    <span class="font-weight-bold">
+      self.showerthoughts
+          </span>
+    <span class="text-secondary">6%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=site%3Ayoutube.com">
+    <span class="legend-indicator sources-3"></span>
+    <span class="font-weight-bold">
+      youtube.com
+          </span>
+    <span class="text-secondary">4.8%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=site%3Aimgur.com">
+    <span class="legend-indicator sources-4"></span>
+    <span class="font-weight-bold">
+      imgur.com
+          </span>
+    <span class="text-secondary">3.1%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=site%3Aself.askreddit">
+    <span class="legend-indicator sources-5"></span>
+    <span class="font-weight-bold">
+      self.askreddit
+          </span>
+    <span class="text-secondary">3.1%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=site%3Ayoutu.be">
+    <span class="legend-indicator sources-6"></span>
+    <span class="font-weight-bold">
+      youtu.be
+          </span>
+    <span class="text-secondary">2.4%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=site%3Ai.imgur.com">
+    <span class="legend-indicator sources-7"></span>
+    <span class="font-weight-bold">
+      i.imgur.com
+          </span>
+    <span class="text-secondary">2.3%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=site%3Areddit.com">
+    <span class="legend-indicator sources-8"></span>
+    <span class="font-weight-bold">
+      reddit.com
+          </span>
+    <span class="text-secondary">2.1%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=site%3Av.redd.it">
+    <span class="legend-indicator sources-9"></span>
+    <span class="font-weight-bold">
+      v.redd.it
+          </span>
+    <span class="text-secondary">1.5%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a href="javascript:void(0)">
+    <span class="legend-indicator sources-10"></span>
+    <span class="font-weight-bold">
+      Other
+    </span>
+    <span class="text-secondary">53.5%</span>
+  </a>
+</li>
+</ul>
+
+        </div>
+                    <hr/>
+        <div class="my-5 mb-9">
+          <h2>Query breakdown by subreddit comments</h2>
+          <div class="progress rounded-pill mb-2">
+    <div class="progress-bar sources-0" role="progressbar" style="width: 11.4%" aria-valuenow="11.4" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-0'></span> /r/askreddit"></div>
+    <div class="progress-bar sources-1" role="progressbar" style="width: 9.5%" aria-valuenow="9.5" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-1'></span> /r/advice"></div>
+    <div class="progress-bar sources-2" role="progressbar" style="width: 2.9%" aria-valuenow="2.9" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-2'></span> /r/writingprompts"></div>
+    <div class="progress-bar sources-3" role="progressbar" style="width: 2%" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-3'></span> /r/dogs"></div>
+    <div class="progress-bar sources-4" role="progressbar" style="width: 1.4%" aria-valuenow="1.4" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-4'></span> /r/borrow"></div>
+    <div class="progress-bar sources-5" role="progressbar" style="width: 1.3%" aria-valuenow="1.3" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-5'></span> /r/aww"></div>
+    <div class="progress-bar sources-6" role="progressbar" style="width: 0.9%" aria-valuenow="0.9" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-6'></span> /r/pics"></div>
+    <div class="progress-bar sources-7" role="progressbar" style="width: 0.8%" aria-valuenow="0.8" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-7'></span> /r/funny"></div>
+    <div class="progress-bar sources-8" role="progressbar" style="width: 0.7%" aria-valuenow="0.7" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-8'></span> /r/amitheasshole"></div>
+    <div class="progress-bar sources-9" role="progressbar" style="width: 0.7%" aria-valuenow="0.7" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-9'></span> /r/politics"></div>
+<div class="progress-bar sources-10" role="progressbar" style="width: 68.4%" aria-valuenow="68.4" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Other"></div>
+</div>
+<ul class="list-inline">
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Faskreddit">
+    <span class="legend-indicator sources-0"></span>
+    <span class="font-weight-bold">
+      /r/askreddit
+          </span>
+    <span class="text-secondary">11.4%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fadvice">
+    <span class="legend-indicator sources-1"></span>
+    <span class="font-weight-bold">
+      /r/advice
+          </span>
+    <span class="text-secondary">9.5%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fwritingprompts">
+    <span class="legend-indicator sources-2"></span>
+    <span class="font-weight-bold">
+      /r/writingprompts
+          </span>
+    <span class="text-secondary">2.9%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fdogs">
+    <span class="legend-indicator sources-3"></span>
+    <span class="font-weight-bold">
+      /r/dogs
+          </span>
+    <span class="text-secondary">2%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fborrow">
+    <span class="legend-indicator sources-4"></span>
+    <span class="font-weight-bold">
+      /r/borrow
+          </span>
+    <span class="text-secondary">1.4%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Faww">
+    <span class="legend-indicator sources-5"></span>
+    <span class="font-weight-bold">
+      /r/aww
+          </span>
+    <span class="text-secondary">1.3%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fpics">
+    <span class="legend-indicator sources-6"></span>
+    <span class="font-weight-bold">
+      /r/pics
+          </span>
+    <span class="text-secondary">0.9%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Ffunny">
+    <span class="legend-indicator sources-7"></span>
+    <span class="font-weight-bold">
+      /r/funny
+          </span>
+    <span class="text-secondary">0.8%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Famitheasshole">
+    <span class="legend-indicator sources-8"></span>
+    <span class="font-weight-bold">
+      /r/amitheasshole
+          </span>
+    <span class="text-secondary">0.7%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fpolitics">
+    <span class="legend-indicator sources-9"></span>
+    <span class="font-weight-bold">
+      /r/politics
+          </span>
+    <span class="text-secondary">0.7%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a href="javascript:void(0)">
+    <span class="legend-indicator sources-10"></span>
+    <span class="font-weight-bold">
+      Other
+    </span>
+    <span class="text-secondary">68.4%</span>
+  </a>
+</li>
+</ul>
+
+        </div>
+                              <hr/>
+                <div class="my-5 mb-9">
+          <h2>Query breakdown by subreddit posts</h2>
+          <div class="progress rounded-pill mb-2">
+    <div class="progress-bar sources-0" role="progressbar" style="width: 6.2%" aria-valuenow="6.2" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-0'></span> /r/whowouldwin"></div>
+    <div class="progress-bar sources-1" role="progressbar" style="width: 6%" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-1'></span> /r/showerthoughts"></div>
+    <div class="progress-bar sources-2" role="progressbar" style="width: 3.1%" aria-valuenow="3.1" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-2'></span> /r/askreddit"></div>
+    <div class="progress-bar sources-3" role="progressbar" style="width: 2.4%" aria-valuenow="2.4" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-3'></span> /r/movies"></div>
+    <div class="progress-bar sources-4" role="progressbar" style="width: 1.8%" aria-valuenow="1.8" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-4'></span> /r/aww"></div>
+    <div class="progress-bar sources-5" role="progressbar" style="width: 1.7%" aria-valuenow="1.7" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-5'></span> /r/funny"></div>
+    <div class="progress-bar sources-6" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-6'></span> /r/pics"></div>
+    <div class="progress-bar sources-7" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-7'></span> /r/boxoffice"></div>
+    <div class="progress-bar sources-8" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-8'></span> /r/nostalgia"></div>
+    <div class="progress-bar sources-9" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" data-html="true" title="<span class='legend-indicator sources-9'></span> /r/teenagers"></div>
+<div class="progress-bar sources-10" role="progressbar" style="width: 74.8%" aria-valuenow="74.8" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="Other"></div>
+</div>
+<ul class="list-inline">
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fwhowouldwin">
+    <span class="legend-indicator sources-0"></span>
+    <span class="font-weight-bold">
+      /r/whowouldwin
+          </span>
+    <span class="text-secondary">6.2%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fshowerthoughts">
+    <span class="legend-indicator sources-1"></span>
+    <span class="font-weight-bold">
+      /r/showerthoughts
+          </span>
+    <span class="text-secondary">6%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Faskreddit">
+    <span class="legend-indicator sources-2"></span>
+    <span class="font-weight-bold">
+      /r/askreddit
+          </span>
+    <span class="text-secondary">3.1%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fmovies">
+    <span class="legend-indicator sources-3"></span>
+    <span class="font-weight-bold">
+      /r/movies
+          </span>
+    <span class="text-secondary">2.4%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Faww">
+    <span class="legend-indicator sources-4"></span>
+    <span class="font-weight-bold">
+      /r/aww
+          </span>
+    <span class="text-secondary">1.8%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Ffunny">
+    <span class="legend-indicator sources-5"></span>
+    <span class="font-weight-bold">
+      /r/funny
+          </span>
+    <span class="text-secondary">1.7%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fpics">
+    <span class="legend-indicator sources-6"></span>
+    <span class="font-weight-bold">
+      /r/pics
+          </span>
+    <span class="text-secondary">1%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fboxoffice">
+    <span class="legend-indicator sources-7"></span>
+    <span class="font-weight-bold">
+      /r/boxoffice
+          </span>
+    <span class="text-secondary">1%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fnostalgia">
+    <span class="legend-indicator sources-8"></span>
+    <span class="font-weight-bold">
+      /r/nostalgia
+          </span>
+    <span class="text-secondary">1%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a class="mr-5" href="https://www.socialgrep.com/search?query=%2Fr%2Fteenagers">
+    <span class="legend-indicator sources-9"></span>
+    <span class="font-weight-bold">
+      /r/teenagers
+          </span>
+    <span class="text-secondary">1%</span>
+      </a>
+</li>
+<li class="list-inline-item">
+  <a href="javascript:void(0)">
+    <span class="legend-indicator sources-10"></span>
+    <span class="font-weight-bold">
+      Other
+    </span>
+    <span class="text-secondary">74.8%</span>
+  </a>
+</li>
+</ul>
+
+        </div>
+                  <hr/>
+      <div class="my-5 mb-9">
+          <h2>Top organizations this week</h2>
+          <!-- Table -->
+<div class="table-responsive datatable-custom">
+  <table id="word_counts_ne_org" class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
+    <tbody>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=nta">nta</a></td>
+          <td class="py-2 text-right">3 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=cute%20nala%20brooks%20fucks%20jon%20rogue">cute nala brooks fucks jon rogue</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=google">google</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=hot%20busty%20redhead%20nala%20brooks%20gives%20sensual%20bj">hot busty redhead nala brooks gives sensual bj</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=house">house</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=red%20ribbon">red ribbon</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=sony">sony</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=walmart">walmart</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=1st%20infantry">1st infantry</a></td>
+          <td class="py-2 text-right">1 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=1st%20infantry%20division">1st infantry division</a></td>
+          <td class="py-2 text-right">1 mentions</td>
+        </tr>
+          </tbody>
+  </table>
+</div>
+<!-- End Table -->
+
+<script>
+var word_counts_ne_org = $.HSCore.components.HSDatatables.init($('#word_counts_ne_org'), {
+  language: {
+    zeroRecords: '<div class="text-center p-4">' +
+        '<p class="mb-0">Data temporarily unavailable</p>' +
+        '</div>'
+  },
+  order: [[1, "desc"]],
+});
+</script>
+
+      </div>
+      <hr/>
+      <div class="my-5 mb-9">
+          <h2>Top people this week</h2>
+          <!-- Table -->
+<div class="table-responsive datatable-custom">
+  <table id="word_counts_ne_per" class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
+    <tbody>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=clifford">clifford</a></td>
+          <td class="py-2 text-right">26 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=loansbot">loansbot</a></td>
+          <td class="py-2 text-right">3 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=anastacia">anastacia</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=ann%20spencer">ann spencer</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=barry">barry</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=cynthia">cynthia</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=dexter">dexter</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=dick">dick</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=edward%20ardizonne">edward ardizonne</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=esther%20averill">esther averill</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+          </tbody>
+  </table>
+</div>
+<!-- End Table -->
+
+<script>
+var word_counts_ne_per = $.HSCore.components.HSDatatables.init($('#word_counts_ne_per'), {
+  language: {
+    zeroRecords: '<div class="text-center p-4">' +
+        '<p class="mb-0">Data temporarily unavailable</p>' +
+        '</div>'
+  },
+  order: [[1, "desc"]],
+});
+</script>
+
+      </div>
+      <hr/>
+      <div class="my-5 mb-9">
+          <h2>Top locations this week</h2>
+          <!-- Table -->
+<div class="table-responsive datatable-custom">
+  <table id="word_counts_ne_loc" class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
+    <tbody>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=us">us</a></td>
+          <td class="py-2 text-right">5 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=la">la</a></td>
+          <td class="py-2 text-right">3 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=new%20york">new york</a></td>
+          <td class="py-2 text-right">3 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=amazon">amazon</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=america">america</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=canada">canada</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=greenwich%20village">greenwich village</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=iowa">iowa</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=olivia">olivia</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+              <tr>
+          <td class="py-2"><a href="https://www.socialgrep.com/search?query=reddit">reddit</a></td>
+          <td class="py-2 text-right">2 mentions</td>
+        </tr>
+          </tbody>
+  </table>
+</div>
+<!-- End Table -->
+
+<script>
+var word_counts_ne_loc = $.HSCore.components.HSDatatables.init($('#word_counts_ne_loc'), {
+  language: {
+    zeroRecords: '<div class="text-center p-4">' +
+        '<p class="mb-0">Data temporarily unavailable</p>' +
+        '</div>'
+  },
+  order: [[1, "desc"]],
+});
+</script>
+
+      </div>
+          </div>
+  </div>
+</div>
+</div>
+</div>
+
+      <div class="footer">
+        <div class="row justify-content-between align-items-center">
+          <div class="col">
+            <p class="font-size-sm mb-0"><a href="https://lexyr.com" style="color: #677788">&copy; Lexyr Inc. <span class="d-none d-sm-inline-block">2020-2021</span></a></p>
+          </div>
+          <div class="col-auto">
+            <div class="d-flex justify-content-end">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JS Plugins Init. -->
+    <script>
+      $(document).on('ready', function () {
+        $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
+          $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
+        });
+
+        
+
+        // initialization of navbar vertical navigation
+        var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
+
+        // initialization of tooltip in navbar vertical menu
+        $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
+
+        $(".js-nav-tooltip-link").on("show.bs.tooltip", function(e) {
+          if (!$("body").hasClass("navbar-vertical-aside-mini-mode")) {
+            return false;
+          }
+        });
+
+        // initialization of unfold
+        $('.js-hs-unfold-invoker').each(function () {
+          var unfold = new HSUnfold($(this)).init();
+        });
+
+        // initialization of form search
+        $('.js-form-search').each(function () {
+          new HSFormSearch($(this)).init()
+        });
+
+        // initialization of select2
+        $('.js-select2-custom').each(function () {
+          var select2 = $.HSCore.components.HSSelect2.init($(this));
+        });
+
+        // initialization of chartjs
+        Chart.plugins.unregister(ChartDataLabels);
+
+        $('.js-chart').each(function () {
+          $.HSCore.components.HSChartJS.init($(this));
+        });
+
+        // initialization of bubble chartjs with Datalabels plugin
+        $('.js-chart-datalabels').each(function () {
+          $.HSCore.components.HSChartJS.init($(this), {
+            plugins: [ChartDataLabels],
+            options: {
+              plugins: {
+                datalabels: {
+                  anchor: function(context) {
+                    var value = context.dataset.data[context.dataIndex];
+                    return value.r < 20 ? 'end' : 'center';
+                  },
+                  align: function(context) {
+                    var value = context.dataset.data[context.dataIndex];
+                    return value.r < 20 ? 'end' : 'center';
+                  },
+                  color: function(context) {
+                    var value = context.dataset.data[context.dataIndex];
+                    return value.r < 20 ? context.dataset.backgroundColor : context.dataset.color;
+                  },
+                  font: function(context) {
+                    var value = context.dataset.data[context.dataIndex],
+                      fontSize = 25;
+
+                    if (value.r > 50) {
+                      fontSize = 35;
+                    }
+
+                    if (value.r > 70) {
+                      fontSize = 55;
+                    }
+
+                    return {
+                      weight: 'lighter',
+                      size: fontSize
+                    };
+                  },
+                  offset: 2,
+                  padding: 0
+                }
+              },
+              tooltips: {
+                callbacks: {
+                  afterTitle: function(a, b) {return "z";}
+                },
+              },
+            },
+          });
+        });
+
+        // initialization of daterangepicker
+        $('.js-daterangepicker').daterangepicker();
+
+        $('.js-daterangepicker-times').daterangepicker({
+          timePicker: true,
+          startDate: moment().startOf('hour'),
+          endDate: moment().startOf('hour').add(32, 'hour'),
+          locale: {
+            format: 'M/DD hh:mm A'
+          }
+        });
+
+        var start = moment();
+        var end = moment();
+
+        function cb(start, end) {
+          $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
+        }
+
+        $('#js-daterangepicker-predefined').daterangepicker({
+          startDate: start,
+          endDate: end,
+          ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          }
+        }, cb);
+
+        cb(start, end);
+
+        $('.js-datatable-filter').on('change', function() {
+          var $this = $(this),
+            elVal = $this.val(),
+            targetColumnIndex = $this.data('target-column-index');
+
+          datatable.column(targetColumnIndex).search(elVal).draw();
+        });
+
+        $('#datatableSearch').on('mouseup', function (e) {
+          var $input = $(this),
+            oldValue = $input.val();
+
+          if (oldValue == "") return;
+
+          setTimeout(function(){
+            var newValue = $input.val();
+
+            if (newValue == ""){
+              // Gotcha
+              datatable.search('').draw();
+            }
+          }, 1);
+        });
+
+        // initialization of clipboard
+        $('.js-clipboard').each(function() {
+          var clipboard = $.HSCore.components.HSClipboard.init(this);
+        });
+      });
+    </script>
+
+    <!-- IE Support -->
+    <script>
+      if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="/static/front/assets/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+    </script>
+  </body>
+</html>
